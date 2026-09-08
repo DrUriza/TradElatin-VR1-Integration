@@ -1,9 +1,8 @@
+.env
 .venv/
+.audit-venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
-.DS_Store
-.env
-.vscode/
-.idea/
-*.zip
+.pytest-tmp/
+runtime/integration.lock.json

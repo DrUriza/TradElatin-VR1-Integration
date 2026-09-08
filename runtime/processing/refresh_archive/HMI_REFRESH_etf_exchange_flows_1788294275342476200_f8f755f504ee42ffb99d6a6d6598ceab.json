@@ -1,0 +1,9 @@
+{
+  "schema": "tradelatin.hmi.refresh-request.v1",
+  "request_id": "HMI_REFRESH_etf_exchange_flows_1788294275342476200_f8f755f504ee42ffb99d6a6d6598ceab",
+  "family": "etf_exchange_flows",
+  "reason": "manual",
+  "contract_file": "etf_exchange_flows_VR1_FINAL.json",
+  "requested_at": "2026-09-01T20:24:35.342510+00:00",
+  "requested_at_epoch": 1788294275.3425064
+}

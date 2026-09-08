@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest-tmp/
+*.log
+.env
+.DS_Store
+Thumbs.db
+
+data/contracts/*
+!data/contracts/.gitkeep
+!data/contracts/*_VR1_FINAL.json
+data/refresh_requests/*
+!data/refresh_requests/.gitkeep

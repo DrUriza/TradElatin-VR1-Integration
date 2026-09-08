@@ -1,0 +1,2064 @@
+{
+  "prices": {
+    "kpi": {
+      "last_price": {
+        "title": "Precio actual",
+        "what_measures": "Mide precio actual dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "market price",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "change_24h": {
+        "title": "Cambio 24H",
+        "what_measures": "Mide cambio 24h dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "return",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "change_15m": {
+        "title": "Cambio 15M",
+        "what_measures": "Mide cambio 15m dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "return",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "change_4h": {
+        "title": "Cambio 4H",
+        "what_measures": "Mide cambio 4h dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "return",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "high_24h": {
+        "title": "Máximo 24H",
+        "what_measures": "Mide máximo 24h dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "price level",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "low_24h": {
+        "title": "Mínimo 24H",
+        "what_measures": "Mide mínimo 24h dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "price level",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "volume_24h": {
+        "title": "Volumen 24H",
+        "what_measures": "Mide volumen 24h dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "flow / notional",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "relative_volume_20": {
+        "title": "Volumen relativo",
+        "what_measures": "Mide volumen relativo dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "ratio",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "volume_zscore_20": {
+        "title": "Z-Score de volumen",
+        "what_measures": "Mide z-score de volumen dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "standardized score",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "market_cap": {
+        "title": "Capitalización de mercado",
+        "what_measures": "Mide capitalización de mercado dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "fundamental market value",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "volatility_atr_percent": {
+        "title": "Volatilidad (ATR %)",
+        "what_measures": "Mide volatilidad (atr %) dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "volatility",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "range_percent": {
+        "title": "Rango de vela %",
+        "what_measures": "Mide rango de vela % dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "intrabar volatility",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      }
+    },
+    "screen_a": {
+      "price_ohlcv": {
+        "title": "Precios / OHLCV",
+        "what_measures": "Representa apertura, máximo, mínimo, cierre y volumen del precio spot de BTC.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Es la capa canónica de precio. La HMI sólo muestra resultados ya calculados por Processing.",
+        "variable_type": "precio de mercado / OHLCV",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      }
+    },
+    "screen_b": {
+      "macd": {
+        "title": "MACD",
+        "what_measures": "Mide macd dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "trend / momentum",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "rsi": {
+        "title": "RSI",
+        "what_measures": "Oscilador RSI de Wilder. Las bandas se precalculan dinámicamente al 20% y 80% del rango RSI observado.",
+        "price_relation": "Los extremos representan momentum localmente estirado respecto al rango RSI observado.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Estados: OVERSOLD, NORMAL BEARISH, NORMAL BULLISH u OVERBOUGHT. Los umbrales los calcula Processing.",
+        "variable_type": "oscilador de momentum",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "tsi": {
+        "title": "TSI",
+        "what_measures": "Oscilador de momentum suavizado dos veces. Las bandas se precalculan al 20% y 80% del rango TSI observado.",
+        "price_relation": "Separa zonas de momentum estirado de regiones normales alcistas o bajistas.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Usa el rango TSI observado; no utiliza umbrales fijos ±25.",
+        "variable_type": "oscilador de momentum",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "adx": {
+        "title": "ADX / DI",
+        "what_measures": "Mide adx / di dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "trend strength",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "stochastic": {
+        "title": "Stochastic",
+        "what_measures": "Posición del cierre dentro del rango reciente mediante %K y %D.",
+        "price_relation": "Debajo de 20 es zona de evento de compra; arriba de 80 es zona de evento de venta.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Flecha verde sólo con cruce alcista K/D y ambos <=20; flecha roja sólo con cruce bajista y ambos >=80.",
+        "variable_type": "oscilador normalizado",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "williams_r": {
+        "title": "Williams %R",
+        "what_measures": "Mide williams %r dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "normalized oscillator",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "cci": {
+        "title": "CCI",
+        "what_measures": "Mide cci dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "momentum / deviation",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "atr": {
+        "title": "ATR",
+        "what_measures": "Mide atr dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "volatility",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "wasserstein_distance": {
+        "title": "Distancia de Wasserstein",
+        "what_measures": "Distancia entre la distribución reciente de retornos y la distribución de referencia inmediatamente anterior.",
+        "price_relation": "Un valor mayor indica que la forma estadística de los retornos está cambiando; no implica dirección.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Un incremento señala cambio de distribución o régimen; no es una señal alcista/bajista por sí sola.",
+        "variable_type": "distancia entre distribuciones",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "mfi": {
+        "title": "MFI",
+        "what_measures": "Mide mfi dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "price-volume oscillator",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "bollinger_band_width": {
+        "title": "Bollinger Band Width",
+        "what_measures": "Mide bollinger band width dentro del contexto de mercado de Prices.",
+        "price_relation": "Aporta contexto directo o derivado sobre el comportamiento del precio BTC.",
+        "cross_family_relation": "Se interpreta junto con CVD, Open Interest, Volatilidad, Liquidaciones y Liquidez cuando corresponda.",
+        "interpretation": "Debe leerse como contexto y confirmación, no como señal aislada.",
+        "variable_type": "volatility",
+        "related_families": [
+          "CVD",
+          "Open Interest",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      }
+    }
+  },
+  "cvd": {
+    "kpi": {
+      "delta_4h": {
+        "title": "Delta 4H",
+        "what_measures": "Notional neto de compras agresivas menos ventas agresivas acumulado en la ventana de 4 horas.",
+        "price_relation": "Delta positivo apoya presión alcista y delta negativo presión bajista; la absorción puede crear divergencias.",
+        "cross_family_relation": "Compáralo con Open Interest, Liquidaciones y Liquidez para distinguir participación direccional de absorción o desapalancamiento.",
+        "interpretation": "Un delta grande con poco movimiento de precio sugiere absorción; alineado con precio confirma mejor la dirección.",
+        "variable_type": "flujo de órdenes firmado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "buy_sell_ratio_4h": {
+        "title": "Relación Buy / Sell",
+        "what_measures": "Relación entre flujo comprador agresivo y flujo vendedor agresivo en 4 horas.",
+        "price_relation": "Mayor a 1 indica dominio comprador; menor a 1 indica dominio vendedor.",
+        "cross_family_relation": "Úsala con CVD Spot/Futures y profundidad de liquidez para saber si la agresión puede mover precio.",
+        "interpretation": "Los extremos son más significativos con volumen alto y respuesta de precio en la misma dirección.",
+        "variable_type": "relación de flujo",
+        "related_families": [
+          "Prices",
+          "Liquidez",
+          "Liquidaciones"
+        ]
+      },
+      "futures_vs_spot_volume_ratio_4h": {
+        "title": "Relación Volumen Futures vs Spot",
+        "what_measures": "Compara el notional negociado en perpetuos/futuros contra spot durante la misma ventana de 4 horas.",
+        "price_relation": "Dominio alto de derivados puede amplificar movimientos y reversas por apalancamiento; mayor participación spot da confirmación de mercado cash.",
+        "cross_family_relation": "Compárala con Open Interest, Funding y Liquidaciones.",
+        "interpretation": "Futures alto con OI creciente sugiere construcción apalancada; con OI cayendo puede ser desapalancamiento.",
+        "variable_type": "relación de volumen entre mercados",
+        "related_families": [
+          "Open Interest",
+          "Liquidaciones",
+          "Prices"
+        ]
+      },
+      "flow_efficiency_4h": {
+        "title": "Eficiencia de Flujo",
+        "what_measures": "Mide qué tan eficientemente el flujo agresivo firmado se traduce en movimiento direccional en vez de ser absorbido.",
+        "price_relation": "Eficiencia alta significa que el precio responde al flujo; baja eficiencia implica absorción o chop.",
+        "cross_family_relation": "Úsala con profundidad de Liquidez y persistencia de whales.",
+        "interpretation": "Delta grande con baja eficiencia puede advertir absorción; eficiencia creciente confirma mejor un impulso.",
+        "variable_type": "score de eficiencia de flujo",
+        "related_families": [
+          "Prices",
+          "Liquidez"
+        ]
+      },
+      "vwap_4h": {
+        "title": "VWAP 4H",
+        "what_measures": "Precio promedio de ejecución ponderado por volumen derivado del footprint de 4 horas.",
+        "price_relation": "Precio arriba del VWAP cotiza sobre el costo ponderado reciente; abajo, por debajo.",
+        "cross_family_relation": "Compáralo con dirección de CVD y paredes de liquidez.",
+        "interpretation": "Úsalo como referencia de valor/contexto, no como señal aislada.",
+        "variable_type": "benchmark de precio",
+        "related_families": [
+          "Prices",
+          "Liquidez"
+        ]
+      },
+      "order_flow_imbalance_4h": {
+        "title": "Desequilibrio de Order Flow",
+        "what_measures": "Diferencia normalizada entre participación compradora y vendedora agresiva en 4 horas.",
+        "price_relation": "Positivo indica agresión compradora; negativo, agresión vendedora.",
+        "cross_family_relation": "Cruza con CVD, respuesta de precio y presión de liquidaciones.",
+        "interpretation": "Desequilibrio persistente alineado con precio confirma; contra precio puede indicar absorción o divergencia.",
+        "variable_type": "flujo firmado normalizado",
+        "related_families": [
+          "Prices",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "spot_delta_4h": {
+        "title": "Spot Delta 4H",
+        "what_measures": "Delta de flujo agresivo exclusivamente del mercado spot.",
+        "price_relation": "Muestra si los agresores de mercado cash son netamente compradores o vendedores.",
+        "cross_family_relation": "Compáralo con Futures Delta y Open Interest para separar movimientos spot-led de leverage-led.",
+        "interpretation": "Delta spot acompañado por precio suele dar confirmación más robusta.",
+        "variable_type": "flujo spot firmado",
+        "related_families": [
+          "Prices",
+          "Open Interest"
+        ]
+      },
+      "futures_delta_4h": {
+        "title": "Futures Delta 4H",
+        "what_measures": "Delta de flujo agresivo exclusivamente de perpetuos/futuros.",
+        "price_relation": "Muestra presión compradora o vendedora del mercado apalancado.",
+        "cross_family_relation": "Léelo con Funding, Open Interest y Liquidaciones.",
+        "interpretation": "Futures Delta grande sin confirmación spot puede ser frágil o impulsado por apalancamiento.",
+        "variable_type": "flujo de derivados firmado",
+        "related_families": [
+          "Open Interest",
+          "Liquidaciones",
+          "Prices"
+        ]
+      },
+      "flow_persistence_4h": {
+        "title": "Persistencia de Flujo 4H",
+        "what_measures": "Grado en que el order flow mantiene la misma dirección durante la ventana de 4 horas.",
+        "price_relation": "Persistencia alta sostiene presión direccional; baja persistencia implica alternancia de flujo.",
+        "cross_family_relation": "Úsala con tendencia, volatilidad y liquidez.",
+        "interpretation": "El flujo persistente suele ser más informativo que un impulso aislado cuando el precio está en tendencia.",
+        "variable_type": "score de persistencia",
+        "related_families": [
+          "Prices",
+          "Volatilidad",
+          "Liquidez"
+        ]
+      },
+      "delta_zscore": {
+        "title": "Delta Z-Score",
+        "what_measures": "Delta actual estandarizado contra su distribución reciente para el mercado y timeframe seleccionado.",
+        "price_relation": "Valores positivos/negativos extremos identifican agresión inusualmente fuerte.",
+        "cross_family_relation": "Compáralo con volatilidad e intensidad de liquidaciones.",
+        "interpretation": "Z-score extremo con respuesta de precio puede confirmar impulso; sin respuesta puede indicar absorción.",
+        "variable_type": "anomalía de flujo estandarizada",
+        "related_families": [
+          "Prices",
+          "Volatilidad",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "cvd_slope": {
+        "title": "Pendiente CVD",
+        "what_measures": "Dirección y tasa de cambio actual del CVD, con aceleración como medida secundaria.",
+        "price_relation": "Pendiente positiva indica acumulación de compras agresivas; negativa, ventas agresivas.",
+        "cross_family_relation": "Compárala con pendiente de precio y divergencia Spot/Futures.",
+        "interpretation": "La pendiente da dirección del flujo y la aceleración indica si esa presión aumenta o se debilita.",
+        "variable_type": "tendencia y aceleración de flujo",
+        "related_families": [
+          "Prices",
+          "Open Interest"
+        ]
+      },
+      "price_cvd_divergence": {
+        "title": "Divergencia Precio / CVD",
+        "what_measures": "Diferencia entre la dirección normalizada del precio y la del CVD.",
+        "price_relation": "Una divergencia significa que precio y flujo agresivo no se confirman.",
+        "cross_family_relation": "Úsala con Liquidez, OI y Liquidaciones para identificar absorción, apalancamiento o agotamiento.",
+        "interpretation": "La divergencia necesita confirmación estructural; no es por sí sola una entrada.",
+        "variable_type": "divergencia entre señales",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      }
+    },
+    "screen_a": {
+      "cvd_spot": {
+        "title": "CVD Spot",
+        "what_measures": "Volumen agresivo firmado acumulado del mercado spot, representado como velas OHLC de CVD.",
+        "price_relation": "CVD ascendente implica dominio de compradores agresivos spot; descendente, de vendedores.",
+        "cross_family_relation": "Compáralo con precio y CVD Futures para encontrar confirmación spot-led o divergencias.",
+        "interpretation": "CVD spot alineado con precio aporta confirmación cash; divergente puede revelar absorción.",
+        "variable_type": "order flow spot acumulado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "Liquidez"
+        ]
+      },
+      "cvd_futures": {
+        "title": "CVD Futures / Perpetuos",
+        "what_measures": "Volumen agresivo firmado acumulado en mercados de perpetuos/futuros.",
+        "price_relation": "CVD ascendente indica dominio comprador en derivados; descendente, dominio vendedor.",
+        "cross_family_relation": "Léelo con Open Interest, Funding y Liquidaciones para separar expansión apalancada de cierres forzados.",
+        "interpretation": "CVD de derivados sin confirmación spot puede ser más frágil.",
+        "variable_type": "order flow de derivados acumulado",
+        "related_families": [
+          "Open Interest",
+          "Liquidaciones",
+          "Prices"
+        ]
+      },
+      "delta_buy_sell_spot": {
+        "title": "Spot Buy / Sell Flow",
+        "what_measures": "Notional de compras y ventas agresivas spot más su delta neto para el timeframe seleccionado.",
+        "price_relation": "Dominio comprador apoya presión alcista; dominio vendedor, presión bajista.",
+        "cross_family_relation": "Úsalo con profundidad de Order Book y CVD spot para detectar absorción.",
+        "interpretation": "El neto da dirección; buy/sell bruto muestra la participación detrás de ese neto.",
+        "variable_type": "flujo de ejecuciones spot",
+        "related_families": [
+          "Prices",
+          "Liquidez"
+        ]
+      },
+      "delta_buy_sell_futures": {
+        "title": "Futures / Perpetual Buy / Sell Flow",
+        "what_measures": "Notional comprador y vendedor agresivo de derivados más su delta neto.",
+        "price_relation": "La presión es sensible al apalancamiento y puede revertir rápidamente al cerrarse posiciones.",
+        "cross_family_relation": "Combínalo con Open Interest, Funding y Liquidaciones.",
+        "interpretation": "Flujo Futures fuerte con OI creciente indica construcción; con OI cayendo puede reflejar cierre/desapalancamiento.",
+        "variable_type": "flujo de ejecuciones de derivados",
+        "related_families": [
+          "Open Interest",
+          "Liquidaciones",
+          "Prices"
+        ]
+      }
+    },
+    "screen_b": {
+      "cvd_slope_acceleration": {
+        "title": "Pendiente / Aceleración CVD",
+        "what_measures": "Pendiente del CVD y cambio de esa pendiente en el mercado/timeframe seleccionado.",
+        "price_relation": "Pendiente positiva apoya presión compradora; negativa, vendedora. Aceleración indica si se fortalece o debilita.",
+        "cross_family_relation": "Compárala con momentum de precio, cambio de OI y eficiencia de flujo.",
+        "interpretation": "Usa pendiente para dirección y aceleración para fuerza creciente/decreciente.",
+        "variable_type": "tendencia y segunda derivada",
+        "related_families": [
+          "Prices",
+          "Open Interest"
+        ]
+      },
+      "delta_zscore": {
+        "title": "Delta Z-Score",
+        "what_measures": "Delta actual expresado en desviaciones estándar respecto a su baseline reciente.",
+        "price_relation": "Lecturas extremas identifican order flow agresivo inusual.",
+        "cross_family_relation": "Compáralo con volatilidad y eventos de liquidación.",
+        "interpretation": "Es una anomalía de flujo, no automáticamente señal de continuación o reversa.",
+        "variable_type": "anomalía estandarizada",
+        "related_families": [
+          "Prices",
+          "Volatilidad",
+          "Liquidaciones"
+        ]
+      },
+      "buy_sell_imbalance": {
+        "title": "Desequilibrio Buy / Sell",
+        "what_measures": "Desequilibrio normalizado entre compras y ventas agresivas.",
+        "price_relation": "Positivo indica agresión compradora; negativo, vendedora.",
+        "cross_family_relation": "Cruza con profundidad de liquidez, pendiente CVD y respuesta de precio.",
+        "interpretation": "Desequilibrio persistente con confirmación de precio es más robusto que un pico aislado.",
+        "variable_type": "desequilibrio normalizado",
+        "related_families": [
+          "Prices",
+          "Liquidez"
+        ]
+      },
+      "price_cvd_divergence": {
+        "title": "Divergencia Precio ↔ CVD",
+        "what_measures": "Mide desacuerdo entre movimiento del precio y movimiento del CVD.",
+        "price_relation": "Precio subiendo con CVD debilitándose puede indicar absorción/agotamiento; precio cayendo con CVD fortaleciéndose puede indicar demanda oculta.",
+        "cross_family_relation": "Usa OI/Liquidaciones para distorsiones apalancadas y Liquidez para absorción.",
+        "interpretation": "Es una condición diagnóstica que requiere confirmación de estructura de mercado.",
+        "variable_type": "divergencia precio-flujo",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "Liquidaciones",
+          "Liquidez"
+        ]
+      },
+      "spot_futures_divergence": {
+        "title": "Divergencia Spot ↔ Futures CVD",
+        "what_measures": "Mide desacuerdo entre CVD spot y CVD de derivados.",
+        "price_relation": "Divergencia grande indica que participantes cash y apalancados empujan distinto.",
+        "cross_family_relation": "Léela con Funding, OI y riesgo de liquidación.",
+        "interpretation": "Movimientos liderados por spot suelen ser más robustos; divergencia liderada por futures puede ser frágil.",
+        "variable_type": "divergencia entre mercados",
+        "related_families": [
+          "Open Interest",
+          "Liquidaciones",
+          "Prices"
+        ]
+      },
+      "wasserstein_distance": {
+        "title": "Distancia Wasserstein",
+        "what_measures": "Distancia distribucional entre estados recientes de order flow y la ventana de referencia previa.",
+        "price_relation": "No da dirección por sí sola; valores mayores indican un cambio más material del régimen de flujo.",
+        "cross_family_relation": "Compárala con cambios de régimen de Volatilidad, shocks de OI y cambios de Liquidez.",
+        "interpretation": "Distancia creciente señala cambio estructural del order flow y debe combinarse con indicadores direccionales.",
+        "variable_type": "distancia distribucional de régimen",
+        "related_families": [
+          "Volatilidad",
+          "Open Interest",
+          "Liquidez",
+          "Prices"
+        ]
+      }
+    }
+  },
+  "open_interest": {
+    "kpi": {
+      "open_interest_usd": {
+        "title": "Open Interest USD",
+        "what_measures": "Valor nocional total de las posiciones abiertas en derivados BTC representadas por el OI agregado.",
+        "price_relation": "OI y precio subiendo juntos indican nueva participación apalancada; OI cayendo durante un movimiento fuerte suele indicar cierre o liquidación de posiciones.",
+        "cross_family_relation": "Léelo con Funding, CVD, Liquidaciones y Prices para separar acumulación de apalancamiento de desapalancamiento.",
+        "interpretation": "El OI mide participación, no dirección por sí solo. La dirección surge al combinar cambio de OI con precio, flujo y funding.",
+        "variable_type": "nocional de posicionamiento en derivados",
+        "related_families": [
+          "Prices",
+          "CVD",
+          "Liquidaciones"
+        ]
+      },
+      "oi_change_24h": {
+        "title": "Cambio de OI 24H",
+        "what_measures": "Cambio absoluto y porcentual del open interest en las 24 horas previas, derivado por Processing.",
+        "price_relation": "Precio y OI subiendo sugieren construcción de posiciones; precio moviéndose mientras el OI cae sugiere cierres/desapalancamiento.",
+        "cross_family_relation": "Compáralo con liquidaciones realizadas y CVD para identificar si la reducción fue forzada o voluntaria.",
+        "interpretation": "Usa signo y magnitud como diagnóstico de participación, no como señal long/short aislada.",
+        "variable_type": "cambio de posicionamiento",
+        "related_families": [
+          "Prices",
+          "CVD",
+          "Liquidaciones"
+        ]
+      },
+      "oi_funding_state": {
+        "title": "Estado OI + Funding",
+        "what_measures": "Clasificación conjunta del comportamiento del OI y el régimen actual de funding.",
+        "price_relation": "Funding positivo congestionado con OI creciente aumenta riesgo de liquidación long; funding muy negativo con OI creciente aumenta riesgo de short squeeze.",
+        "cross_family_relation": "Usa Liquidaciones y CVD para confirmar crowding.",
+        "interpretation": "Resume presión de apalancamiento y crowding; no predice dirección por sí solo.",
+        "variable_type": "estado derivado de posicionamiento",
+        "related_families": [
+          "Liquidaciones",
+          "CVD",
+          "Prices"
+        ]
+      },
+      "provider_availability": {
+        "title": "Disponibilidad de Proveedores",
+        "what_measures": "Disponibilidad de las primitivas contratadas de OI/Funding usadas por Processing.",
+        "price_relation": "No tiene significado direccional; es un indicador de calidad de datos.",
+        "cross_family_relation": "Sirve para evaluar si conclusiones entre familias tienen cobertura completa.",
+        "interpretation": "Cobertura incompleta debe reducir la confianza de las señales derivadas.",
+        "variable_type": "estado de calidad de datos",
+        "related_families": [
+          "Todas las familias"
+        ]
+      },
+      "funding_rate": {
+        "title": "Funding Rate",
+        "what_measures": "Funding de perpetuos ponderado por open interest proveniente de CoinGlass.",
+        "price_relation": "Funding persistentemente positivo implica longs pagando shorts; negativo implica shorts pagando longs. Crowding extremo puede preceder squeezes.",
+        "cross_family_relation": "Combínalo con crecimiento de OI, CVD y Liquidaciones.",
+        "interpretation": "Funding cercano a cero es neutral. Los extremos importan más cuando el OI también crece.",
+        "variable_type": "tasa de carry de derivados",
+        "related_families": [
+          "CVD",
+          "Liquidaciones",
+          "Prices"
+        ]
+      },
+      "estimated_leverage_ratio": {
+        "title": "Estimated Leverage Ratio",
+        "what_measures": "Ratio de apalancamiento estimado de Glassnode usado como confirmación secundaria contratada.",
+        "price_relation": "Mayor apalancamiento puede amplificar tanto continuación como reversas forzadas.",
+        "cross_family_relation": "Léelo con OI, Funding y presión de liquidaciones.",
+        "interpretation": "Apalancamiento elevado es contexto de fragilidad/riesgo, no dirección.",
+        "variable_type": "ratio de apalancamiento",
+        "related_families": [
+          "Liquidaciones",
+          "Prices"
+        ]
+      }
+    },
+    "screen_a": {
+      "open_interest_ohlc": {
+        "title": "Open Interest OHLC",
+        "what_measures": "OHLC agregado de open interest para 5m, 15m o 4h, con overlays y cruces precalculados.",
+        "price_relation": "La expansión/contracción del OI muestra si un movimiento de precio atrae nuevo apalancamiento o cierra posiciones existentes.",
+        "cross_family_relation": "Úsalo con Price OHLC, CVD y Liquidaciones.",
+        "interpretation": "Las flechas marcan cruces de medias del OI precalculados en Processing; HMI no calcula señales.",
+        "variable_type": "serie OHLC de posicionamiento",
+        "related_families": [
+          "Prices",
+          "CVD",
+          "Liquidaciones"
+        ]
+      }
+    },
+    "screen_b": {
+      "oi_dynamics": {
+        "title": "OI ROC / Pendiente / Aceleración",
+        "what_measures": "Tasa de cambio, pendiente y aceleración del OI en el timeframe actual.",
+        "price_relation": "La aceleración del OI revela qué tan rápido crece el apalancamiento detrás del precio.",
+        "cross_family_relation": "Compárala con impulso CVD e intensidad de liquidaciones.",
+        "interpretation": "Aceleración positiva implica construcción de leverage más rápida; negativa implica desaceleración o contracción.",
+        "variable_type": "dinámica de OI",
+        "related_families": [
+          "CVD",
+          "Liquidaciones",
+          "Prices"
+        ]
+      },
+      "oi_zscore_percentile": {
+        "title": "OI Z-Score / Percentil",
+        "what_measures": "Posición estandarizada y percentil del OI contra su distribución reciente.",
+        "price_relation": "OI extremo puede indicar concentración inusual de apalancamiento y mayor sensibilidad a squeezes.",
+        "cross_family_relation": "Úsalo con Funding y Liquidaciones para evaluar crowding.",
+        "interpretation": "Extremo no significa reversa automática; identifica posicionamiento anormal.",
+        "variable_type": "anomalía estandarizada de posicionamiento",
+        "related_families": [
+          "Liquidaciones",
+          "Prices"
+        ]
+      },
+      "price_oi_regime": {
+        "title": "Régimen Price × OI",
+        "what_measures": "Clasificación conjunta construida con comportamiento del precio y cambio de OI.",
+        "price_relation": "Separa expansión apalancada, short covering, deleveraging y otras combinaciones precio/OI.",
+        "cross_family_relation": "Valídalo con dirección CVD y lado de liquidaciones.",
+        "interpretation": "Usa el régimen para entender el mecanismo detrás del movimiento.",
+        "variable_type": "régimen conjunto de mercado",
+        "related_families": [
+          "Prices",
+          "CVD",
+          "Liquidaciones"
+        ]
+      },
+      "price_oi_divergence": {
+        "title": "Divergencia Price ↔ OI",
+        "what_measures": "Grado de desacuerdo entre movimiento de precio y participación de OI.",
+        "price_relation": "Un movimiento grande con OI cayendo suele reflejar cierres/desapalancamiento en vez de nueva convicción.",
+        "cross_family_relation": "Usa CVD y Liquidaciones para separar covering de salidas forzadas.",
+        "interpretation": "La divergencia es contexto diagnóstico y requiere confirmación de flujo.",
+        "variable_type": "divergencia precio-posicionamiento",
+        "related_families": [
+          "Prices",
+          "CVD",
+          "Liquidaciones"
+        ]
+      },
+      "funding_oi_crowding": {
+        "title": "Crowding Funding × OI",
+        "what_measures": "Score conjunto de crowding que combina funding con posicionamiento de open interest.",
+        "price_relation": "Crowding positivo alto aumenta vulnerabilidad de longs; crowding negativo puede aumentar vulnerabilidad a short squeeze.",
+        "cross_family_relation": "Confirma con clusters de liquidación y CVD.",
+        "interpretation": "Crowding mide fragilidad, no una reversa garantizada.",
+        "variable_type": "score de crowding apalancado",
+        "related_families": [
+          "Liquidaciones",
+          "CVD",
+          "Prices"
+        ]
+      },
+      "wasserstein_distance": {
+        "title": "Wasserstein / Cambio de Régimen",
+        "what_measures": "Distancia distribucional entre ventanas recientes y de referencia de retornos del OI.",
+        "price_relation": "No es direccional; mayor distancia implica un cambio material del proceso de posicionamiento.",
+        "cross_family_relation": "Compárala con Wasserstein de Prices/Volatilidad y shocks de liquidación.",
+        "interpretation": "Distancia creciente señala transición de régimen de OI que debe combinarse con indicadores direccionales.",
+        "variable_type": "distancia distribucional de régimen",
+        "related_families": [
+          "Prices",
+          "Volatilidad",
+          "Liquidaciones"
+        ]
+      }
+    }
+  },
+  "etf": {
+    "kpi": {
+      "etf_net_flow": {
+        "title": "Flujo Neto ETF",
+        "what_measures": "Capital neto en USD que entra o sale de los ETF spot de Bitcoin de EE. UU. en el rango 7D o 30D seleccionado.",
+        "price_relation": "Flujos positivos persistentes pueden sostener demanda spot; salidas persistentes pueden retirar soporte estructural.",
+        "cross_family_relation": "Compáralo con Prices, CVD y Exchange Flows para separar demanda institucional de presión vendedora en exchanges.",
+        "interpretation": "Positivo = dominan entradas/creaciones; negativo = dominan salidas/redenciones.",
+        "variable_type": "flujo de capital institucional",
+        "related_families": [
+          "Prices",
+          "CVD",
+          "ETF & Exchange Flows"
+        ]
+      },
+      "total_aum": {
+        "title": "AUM Total ETF",
+        "what_measures": "Activos totales bajo gestión del catálogo ETF, derivados de la lista ETF contratada de CoinGlass.",
+        "price_relation": "El AUM cambia tanto por precio de BTC como por nuevos flujos, por lo que no representa flujo puro.",
+        "cross_family_relation": "Úsalo junto con ETF Net Flow y precio BTC para separar valoración de entrada de capital.",
+        "interpretation": "Mayor AUM indica mayor exposición institucional; la dirección la aporta el flujo.",
+        "variable_type": "base de activos institucional",
+        "related_families": [
+          "Prices"
+        ]
+      },
+      "cumulative_etf_net_flow": {
+        "title": "Flujo Neto ETF Acumulado",
+        "what_measures": "Suma acumulada de flujos ETF diarios calculada por Processing.",
+        "price_relation": "Una curva ascendente indica acumulación institucional sostenida; descendente indica distribución.",
+        "cross_family_relation": "Compara su pendiente con Price y CVD para confirmación o divergencia.",
+        "interpretation": "Importa más la tendencia e inflexiones que el nivel inicial absoluto.",
+        "variable_type": "flujo institucional acumulado",
+        "related_families": [
+          "Prices",
+          "CVD"
+        ]
+      },
+      "exchange_inflow": {
+        "title": "Exchange Inflow",
+        "what_measures": "BTC transferido hacia exchanges durante las últimas 24 horas desde CryptoQuant.",
+        "price_relation": "Inflow elevado puede aumentar inventario disponible para vender, aunque una transferencia no implica venta automática.",
+        "cross_family_relation": "Confirma con Outflow, Net Flow, CVD y Liquidations.",
+        "interpretation": "Los picos son posibles eventos de distribución/oferta que requieren confirmación.",
+        "variable_type": "flujo de transferencia hacia exchange",
+        "related_families": [
+          "CVD",
+          "Liquidations"
+        ]
+      },
+      "exchange_outflow": {
+        "title": "Exchange Outflow",
+        "what_measures": "BTC transferido fuera de exchanges durante las últimas 24 horas.",
+        "price_relation": "Outflow persistente puede reducir oferta líquida y acompañar custodia/acumulación.",
+        "cross_family_relation": "Compáralo con Net Flow, Reserve y ETF Flow.",
+        "interpretation": "Outflow alto es contexto de oferta, no una señal de compra independiente.",
+        "variable_type": "flujo de transferencia fuera de exchange",
+        "related_families": [
+          "Prices",
+          "On-Chain"
+        ]
+      },
+      "exchange_balance": {
+        "title": "Reserva en Exchanges",
+        "what_measures": "Reserva BTC más reciente mantenida en exchanges según CryptoQuant.",
+        "price_relation": "Reserva descendente puede implicar menor oferta líquida; ascendente puede indicar más BTC disponible en exchanges.",
+        "cross_family_relation": "Combínala con presión inflow/outflow y Price.",
+        "interpretation": "La tendencia importa más que una sola observación; saltos deben leerse con los flujos.",
+        "variable_type": "stock de inventario en exchanges",
+        "related_families": [
+          "Prices",
+          "On-Chain"
+        ]
+      },
+      "gbtc_premium": {
+        "title": "Prima / Descuento GBTC",
+        "what_measures": "Prima o descuento actual de GBTC disponible dentro del snapshot del catálogo ETF contratado.",
+        "price_relation": "Descuento puede reflejar menor demanda relativa por GBTC; prima implica mayor demanda relativa frente a NAV.",
+        "cross_family_relation": "Úsalo con flujos ETF agregados y AUM, no como señal direccional aislada de BTC.",
+        "interpretation": "Cerca de cero significa cotización próxima al NAV; signo y magnitud muestran desalineación.",
+        "variable_type": "valoración relativa ETF",
+        "related_families": [
+          "Prices"
+        ]
+      },
+      "exchange_flow_pressure": {
+        "title": "Presión de Flujo en Exchanges",
+        "what_measures": "Ratio normalizado calculado por Processing: (inflow − outflow) / (inflow + outflow) en 24h.",
+        "price_relation": "Positivo = presión neta hacia exchanges; negativo = presión neta de retiro.",
+        "cross_family_relation": "Compáralo con CVD y Price para saber si las transferencias se convierten en ventas/compras ejecutadas.",
+        "interpretation": "Cerca de cero es balance; magnitudes grandes indican desequilibrio direccional.",
+        "variable_type": "desequilibrio normalizado de flujo",
+        "related_families": [
+          "CVD",
+          "Prices"
+        ]
+      }
+    },
+    "screen_a": {
+      "etf_flow_daily": {
+        "title": "Flujo Neto ETF Diario",
+        "what_measures": "Flujo neto agregado diario de ETF spot BTC y su ventana visible 7D/30D.",
+        "price_relation": "Entradas sostenidas pueden actuar como demanda spot estructural; salidas sostenidas pueden debilitarla.",
+        "cross_family_relation": "Compara con precio BTC y CVD.",
+        "interpretation": "Secuencias de días del mismo signo pesan más que una sesión aislada.",
+        "variable_type": "flujo institucional diario",
+        "related_families": [
+          "Prices",
+          "CVD"
+        ]
+      },
+      "etf-funds": {
+        "title": "Flujo ETF por Proveedor",
+        "what_measures": "AUM y flujo por fondo para el catálogo ETF.",
+        "price_relation": "Permite identificar qué productos impulsan la demanda institucional agregada o las redenciones.",
+        "cross_family_relation": "Úsalo con ETF Net Flow agregado y Total AUM.",
+        "interpretation": "Concentración en un solo fondo puede hacer que el flujo agregado sea menos amplio de lo que parece.",
+        "variable_type": "tabla transversal ETF",
+        "related_families": [
+          "Prices"
+        ]
+      },
+      "exchange_net_flow": {
+        "title": "Exchange Inflow / Outflow / Net Flow",
+        "what_measures": "Inflow y outflow diarios más Net Flow derivado por Processing como Inflow − Outflow.",
+        "price_relation": "Net Flow positivo = entra más BTC a exchanges del que sale; negativo = retiro neto.",
+        "cross_family_relation": "Confirma con CVD, reserva y presión de liquidaciones.",
+        "interpretation": "La serie neta se deriva de las dos primitivas contratadas; HMI no calcula.",
+        "variable_type": "balance derivado de transferencias",
+        "related_families": [
+          "CVD",
+          "Liquidations",
+          "Prices"
+        ]
+      },
+      "exchange_balance": {
+        "title": "Balance / Reserva en Exchanges",
+        "what_measures": "Historia diaria de reserva CryptoQuant renderizada directamente desde Processing.",
+        "price_relation": "Caída sostenida puede reducir oferta líquida; crecimiento sostenido puede aumentar inventario disponible.",
+        "cross_family_relation": "Léela con Net Flow y flujo institucional ETF.",
+        "interpretation": "Busca tendencia persistente y cambios abruptos de nivel.",
+        "variable_type": "serie temporal de inventario exchange",
+        "related_families": [
+          "On-Chain",
+          "Prices"
+        ]
+      }
+    },
+    "screen_b": {
+      "etf_flow_momentum_persistence": {
+        "title": "Momentum / Persistencia de Flujo ETF",
+        "what_measures": "Momentum normalizado y persistencia del signo del flujo ETF diario.",
+        "price_relation": "Momentum positivo persistente apoya contexto de acumulación; negativo persistente apoya distribución.",
+        "cross_family_relation": "Confirma con tendencia de BTC y CVD.",
+        "interpretation": "Momentum mide aceleración; persistencia mide continuidad del signo.",
+        "variable_type": "estado de momentum institucional",
+        "related_families": [
+          "Prices",
+          "CVD"
+        ]
+      },
+      "etf_flow_zscore": {
+        "title": "Z-Score de Flujo ETF",
+        "what_measures": "Flujo ETF estandarizado contra su distribución reciente.",
+        "price_relation": "Valores extremos identifican episodios inusuales de demanda o redención institucional.",
+        "cross_family_relation": "Compáralo con volatilidad y régimen de precio.",
+        "interpretation": "Magnitud = anomalía; signo = entrada o salida.",
+        "variable_type": "flujo institucional estandarizado",
+        "related_families": [
+          "Prices",
+          "Volatility"
+        ]
+      },
+      "btc_etf_flow_divergence": {
+        "title": "Divergencia BTC ↔ Flujo ETF",
+        "what_measures": "Diferencia entre retorno BTC estandarizado y flujo ETF estandarizado usando contexto diario de Prices.",
+        "price_relation": "Divergencia grande significa que precio y flujo institucional no se confirman.",
+        "cross_family_relation": "Usa CVD como tercera capa de confirmación.",
+        "interpretation": "Es diagnóstica; la persistencia importa más que un solo punto.",
+        "variable_type": "divergencia precio-flujo",
+        "related_families": [
+          "Prices",
+          "CVD"
+        ]
+      },
+      "exchange_flow_pressure": {
+        "title": "Presión de Flujo en Exchanges",
+        "what_measures": "Presión normalizada diaria junto con Z-score de Net Flow.",
+        "price_relation": "Presión positiva puede aumentar disponibilidad para venta; negativa puede indicar retiro/acumulación.",
+        "cross_family_relation": "Léela con CVD y cambio de reserva.",
+        "interpretation": "Usa extremos y persistencia, no variaciones pequeñas alrededor de cero.",
+        "variable_type": "estado de presión de flujo",
+        "related_families": [
+          "CVD",
+          "Prices"
+        ]
+      },
+      "exchange_reserve_change": {
+        "title": "Cambio / Z-Score de Reserva",
+        "what_measures": "Cambio estandarizado de reserva y tasa de cambio de mayor horizonte.",
+        "price_relation": "Aumentos fuertes pueden indicar inventario entrando a exchanges; caídas pueden indicar salida de oferta.",
+        "cross_family_relation": "Confirma con inflow/outflow y contexto on-chain.",
+        "interpretation": "Z-score detecta movimientos anormales; ROC aporta dirección estructural.",
+        "variable_type": "cambio de inventario exchange",
+        "related_families": [
+          "On-Chain",
+          "Prices"
+        ]
+      },
+      "capital_regime_wasserstein": {
+        "title": "Régimen de Capital ETF × Exchange / Wasserstein",
+        "what_measures": "Score compuesto de régimen de capital y distancia Wasserstein entre distribuciones consecutivas del score.",
+        "price_relation": "Wasserstein no es direccional: distancia alta indica que el proceso de flujo de capital está cambiando.",
+        "cross_family_relation": "Compara cambios de régimen con Wasserstein de Prices y Volatility.",
+        "interpretation": "Usa el score para dirección y Wasserstein para intensidad de transición.",
+        "variable_type": "distancia de régimen de flujo de capital",
+        "related_families": [
+          "Prices",
+          "Volatility"
+        ]
+      }
+    }
+  },
+  "miners": {
+    "kpi": {
+      "miner_pressure": {
+        "title": "Presión de Mineros",
+        "what_measures": "Estado compuesto de presión vendedora de mineros calculado en Processing a partir de cambios de reserva, SOPR y transferencias de mineros.",
+        "price_relation": "Una presión alta puede añadir oferta al mercado y volverse bajista cuando la demanda no logra absorberla.",
+        "cross_family_relation": "Confírmalo con CVD, Flujos de Exchange y Liquidaciones para saber si la distribución está siendo absorbida.",
+        "interpretation": "Baja implica poca presión; moderada requiere confirmación; alta indica oferta de mineros inusualmente fuerte.",
+        "variable_type": "estado de presión vendedora de mineros",
+        "related_families": [
+          "CVD",
+          "ETF & Exchange Flows",
+          "Liquidations"
+        ]
+      },
+      "reserve_trend": {
+        "title": "Tendencia de Reserva de Mineros",
+        "what_measures": "Dirección y pendiente del BTC mantenido por entidades mineras.",
+        "price_relation": "Reservas descendentes sugieren distribución neta; reservas ascendentes sugieren acumulación o menor venta.",
+        "cross_family_relation": "Comparar con Miner Net Position Change, SOPR e inflows de exchanges.",
+        "interpretation": "Importa más la persistencia que un movimiento aislado; una pendiente negativa mayor implica agotamiento más rápido.",
+        "variable_type": "tendencia de inventario minero",
+        "related_families": [
+          "ETF & Exchange Flows",
+          "Prices"
+        ]
+      },
+      "net_position": {
+        "title": "Posición Neta de Mineros",
+        "what_measures": "Cambio diario de la reserva de mineros derivado en Processing desde la primitiva contratada.",
+        "price_relation": "Valores negativos indican reducción de reservas; positivos indican acumulación neta.",
+        "cross_family_relation": "Usar con Miner Pressure y CVD para saber si la distribución llega agresivamente al mercado.",
+        "interpretation": "Valores negativos grandes son eventos de distribución; positivos grandes son eventos de acumulación.",
+        "variable_type": "flujo de inventario minero",
+        "related_families": [
+          "CVD",
+          "Prices"
+        ]
+      },
+      "sopr_regime": {
+        "title": "Régimen SOPR",
+        "what_measures": "Indica si el BTC gastado se mueve con ganancia o pérdida agregada respecto a su costo.",
+        "price_relation": "SOPR sobre 1 refleja ganancia realizada; debajo de 1 refleja pérdida y puede señalar estrés o capitulación.",
+        "cross_family_relation": "Combinar con cambios de reserva, presión de mineros y régimen de volatilidad.",
+        "interpretation": "La línea 1.0 es equilibrio; la persistencia alrededor de ella es más importante que un punto aislado.",
+        "variable_type": "régimen de rentabilidad realizada",
+        "related_families": [
+          "Prices",
+          "Volatility"
+        ]
+      }
+    },
+    "screen_a": {
+      "miner_reserve": {
+        "title": "Reserva de Mineros",
+        "what_measures": "Balance de BTC atribuido a entidades mineras según Glassnode.",
+        "price_relation": "Una caída persistente puede representar distribución estructural; un aumento puede reflejar retención o acumulación.",
+        "cross_family_relation": "Comparar con Net Position Change, transferencias de mineros e inflows a exchanges.",
+        "interpretation": "Leer pendiente y aceleración, no sólo el nivel absoluto.",
+        "variable_type": "inventario on-chain de mineros",
+        "related_families": [
+          "ETF & Exchange Flows",
+          "Prices"
+        ]
+      },
+      "sopr_7d": {
+        "title": "SOPR 7D",
+        "what_measures": "SOPR suavizado a siete días para reducir ruido diario.",
+        "price_relation": "Sobre 1 indica ganancias realizadas; debajo de 1 indica pérdidas realizadas.",
+        "cross_family_relation": "Confirmar con tendencia de Precio y Volatilidad antes de interpretar capitulación o toma de ganancias.",
+        "interpretation": "Los cruces y la persistencia alrededor de 1 son la referencia principal.",
+        "variable_type": "ratio on-chain de rentabilidad",
+        "related_families": [
+          "Prices",
+          "Volatility"
+        ]
+      },
+      "hashrate": {
+        "title": "Hashrate",
+        "what_measures": "Tasa hash estimada de Bitcoin, representando el cómputo agregado de minería.",
+        "price_relation": "Una contracción sostenida puede indicar estrés de mineros; una expansión suele indicar mayor participación.",
+        "cross_family_relation": "Leer junto con Difficulty y estrés de ingresos mineros.",
+        "interpretation": "La tendencia y las medias son más útiles que una sola observación.",
+        "variable_type": "actividad de minería de red",
+        "related_families": [
+          "Prices"
+        ]
+      },
+      "difficulty": {
+        "title": "Difficulty",
+        "what_measures": "Dificultad requerida por la red Bitcoin para producir bloques.",
+        "price_relation": "Una dificultad creciente eleva presión de costos cuando los ingresos no acompañan; una caída puede seguir a salidas de mineros.",
+        "cross_family_relation": "Combinar con Hashrate, estrés de ingresos y reservas de mineros.",
+        "interpretation": "Usar los cambios alrededor de ajustes de dificultad como contexto estructural de costos.",
+        "variable_type": "dificultad de minería de red",
+        "related_families": [
+          "Prices"
+        ]
+      },
+      "miner_net_position_change": {
+        "title": "Cambio de Posición Neta de Mineros",
+        "what_measures": "Cambio diario de reservas BTC de mineros derivado por Processing.",
+        "price_relation": "Valores negativos aportan contexto de distribución; positivos indican retención o acumulación.",
+        "cross_family_relation": "Confirmar cambios grandes con Miner Pressure, CVD y Exchange Inflow.",
+        "interpretation": "Magnitud y persistencia determinan si el movimiento es estructural o aislado.",
+        "variable_type": "flujo de inventario minero",
+        "related_families": [
+          "CVD",
+          "ETF & Exchange Flows"
+        ]
+      }
+    },
+    "screen_b": {
+      "miner_reserve_change_zscore": {
+        "title": "Cambio de Reserva / Z-Score",
+        "what_measures": "Cambio de reserva junto con su desviación estandarizada respecto al comportamiento reciente.",
+        "price_relation": "Z-scores negativos extremos identifican distribución inusualmente grande; positivos extremos identifican acumulación inusual.",
+        "cross_family_relation": "Usar con Exchange Flow Pressure y CVD.",
+        "interpretation": "El Z-score mide anormalidad; el cambio de reserva aporta dirección.",
+        "variable_type": "cambio estandarizado de inventario minero",
+        "related_families": [
+          "CVD",
+          "ETF & Exchange Flows"
+        ]
+      },
+      "miner_selling_pressure": {
+        "title": "MPI / Presión Miner-to-Exchange",
+        "what_measures": "MPI y presión de transferencias para cuantificar distribución anormal de mineros hacia el mercado.",
+        "price_relation": "Presión positiva alta puede aumentar oferta bajista cuando la demanda spot es débil.",
+        "cross_family_relation": "Confirmar con Exchange Inflow, CVD y Liquidations.",
+        "interpretation": "Importan los extremos persistentes, no pequeñas oscilaciones cerca de neutral.",
+        "variable_type": "presión de transferencias de mineros",
+        "related_families": [
+          "CVD",
+          "Liquidations"
+        ]
+      },
+      "puell_revenue_stress": {
+        "title": "Puell Multiple / Estrés de Ingresos",
+        "what_measures": "Ingresos de mineros respecto a su referencia de largo plazo y el estado económico resultante.",
+        "price_relation": "Múltiplos muy bajos pueden acompañar estrés/capitulación; altos pueden favorecer toma de ganancias.",
+        "cross_family_relation": "Leer con Hashrate, Difficulty y distribución de reservas.",
+        "interpretation": "Usar extremos como régimen económico de mineros, no como señal aislada de timing.",
+        "variable_type": "valoración/estrés de ingresos mineros",
+        "related_families": [
+          "Prices",
+          "Volatility"
+        ]
+      },
+      "hashrate_momentum_hash_ribbon": {
+        "title": "Momentum de Hashrate / Hash Ribbon",
+        "what_measures": "Momentum de hashrate y medias rápida/lenta para identificar contracción y recuperación de la red minera.",
+        "price_relation": "Contracción sostenida puede acompañar capitulación; recuperación puede confirmar normalización posterior.",
+        "cross_family_relation": "Combinar con Difficulty Stress y reservas de mineros.",
+        "interpretation": "Enfocarse en relaciones persistentes entre medias y dirección del momentum.",
+        "variable_type": "momentum de salud de red",
+        "related_families": [
+          "Prices"
+        ]
+      },
+      "hashrate_difficulty_stress": {
+        "title": "Estrés Hashrate × Difficulty",
+        "what_measures": "Cambios estandarizados conjuntos de hashrate y dificultad resumidos como estrés de red.",
+        "price_relation": "Hashrate descendente con dificultad alta o creciente puede elevar la presión económica de mineros.",
+        "cross_family_relation": "Confirmar con Puell/Revenue Stress y Miner Selling Pressure.",
+        "interpretation": "Mayor estrés significa condiciones de minería deteriorándose frente a la historia reciente.",
+        "variable_type": "estrés de red minera",
+        "related_families": [
+          "Prices",
+          "Volatility"
+        ]
+      },
+      "miner_capitulation_recovery_regime": {
+        "title": "Capitulación / Recuperación + Wasserstein",
+        "what_measures": "Régimen compuesto de mineros, probabilidad de capitulación, score de recuperación y distancia Wasserstein entre distribuciones consecutivas.",
+        "price_relation": "El score de régimen aporta dirección; Wasserstein alto indica cambio estructural en el comportamiento minero.",
+        "cross_family_relation": "Comparar cambios de régimen con Wasserstein de Prices y Volatility.",
+        "interpretation": "Usar probabilidad/recuperación para estado y Wasserstein para intensidad de transición; Wasserstein no tiene dirección.",
+        "variable_type": "transición de régimen minero",
+        "related_families": [
+          "Prices",
+          "Volatility"
+        ]
+      }
+    }
+  },
+  "volatility": {
+    "kpi": {
+      "current_regime": {
+        "title": "Régimen Actual",
+        "what_measures": "Régimen actual de volatilidad realizada clasificado desde la distribución empírica reciente.",
+        "price_relation": "El régimen describe magnitud de movimiento, no dirección alcista o bajista.",
+        "cross_family_relation": "Comparar con Wasserstein de Prices, desapalancamiento de OI y presión de liquidaciones.",
+        "interpretation": "LOW indica compresión, NORMAL la zona media y HIGH volatilidad inusualmente elevada.",
+        "variable_type": "régimen de volatilidad",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "Liquidations",
+          "Liquidity"
+        ]
+      },
+      "realized_vol_7d": {
+        "title": "Volatilidad Realizada 7D",
+        "what_measures": "Volatilidad anualizada derivada por Processing de retornos spot BTC en una ventana móvil de siete días.",
+        "price_relation": "Valores altos significan una distribución de retornos realizados más amplia.",
+        "cross_family_relation": "Comparar con DVOL y estrés de liquidez.",
+        "interpretation": "RV7D creciente indica expansión de movimiento realizado; decreciente indica compresión.",
+        "variable_type": "volatilidad realizada",
+        "related_families": [
+          "Prices",
+          "Liquidity",
+          "Liquidations"
+        ]
+      },
+      "implied_vol_dvol": {
+        "title": "Volatilidad Implícita / DVOL",
+        "what_measures": "Cierre de Glassnode DVOL, única primitiva externa de volatilidad de esta familia.",
+        "price_relation": "Refleja incertidumbre implícita en opciones, no dirección del precio.",
+        "cross_family_relation": "Comparar con volatilidad realizada para medir cuánto movimiento futuro descuenta el mercado.",
+        "interpretation": "DVOL creciente significa mayor incertidumbre futura descontada por opciones.",
+        "variable_type": "índice de volatilidad implícita",
+        "related_families": [
+          "Prices",
+          "ETF",
+          "Liquidations"
+        ]
+      },
+      "vol_risk_premium": {
+        "title": "Prima de Riesgo de Volatilidad",
+        "what_measures": "Diferencia entre volatilidad implícita 1M y volatilidad realizada 30D.",
+        "price_relation": "VRP positivo implica IV mayor que RV; negativo implica RV mayor que IV.",
+        "cross_family_relation": "Útil con presión de liquidaciones y estrés de liquidez.",
+        "interpretation": "Valores positivos grandes indican prima implícita rica; negativos indican movimiento realizado superior al descontado.",
+        "variable_type": "spread de volatilidad",
+        "related_families": [
+          "Prices",
+          "Liquidations",
+          "Liquidity"
+        ]
+      },
+      "skew_25d": {
+        "title": "Skew 25Δ",
+        "what_measures": "Asimetría derivada por Processing entre volatilidad implícita downside y upside alrededor de DVOL.",
+        "price_relation": "Positivo indica protección downside más cara; negativo convexidad upside más cara.",
+        "cross_family_relation": "Comparar con posicionamiento, clusters de liquidación y ETF.",
+        "interpretation": "Usar el signo para asimetría y la magnitud para fuerza; no es señal direccional directa.",
+        "variable_type": "skew de opciones",
+        "related_families": [
+          "Open Interest",
+          "Liquidations",
+          "ETF"
+        ]
+      },
+      "regime_confidence": {
+        "title": "Confianza del Régimen",
+        "what_measures": "Distancia del percentil actual de RV respecto al centro de su distribución reciente.",
+        "price_relation": "Mayor confianza implica un estado de volatilidad más separado del régimen normal.",
+        "cross_family_relation": "Confirmar lecturas fuertes con Wasserstein y familias de estrés.",
+        "interpretation": "Confianza alta refuerza la etiqueta de régimen; baja significa cercanía a normal.",
+        "variable_type": "confianza de clasificación",
+        "related_families": [
+          "Prices",
+          "Liquidations",
+          "Liquidity"
+        ]
+      }
+    },
+    "screen_a": {
+      "realized_volatility": {
+        "title": "Volatilidad Realizada · RV7D / RV30D",
+        "what_measures": "Volatilidad realizada anualizada móvil de 7D y 30D derivada de Prices.",
+        "price_relation": "Muestra qué tan violentamente se ha movido BTC en horizontes corto y medio.",
+        "cross_family_relation": "Comparar contra DVOL y condiciones de liquidez.",
+        "interpretation": "RV7D sobre RV30D indica expansión reciente; debajo indica compresión.",
+        "variable_type": "comparación temporal de volatilidad realizada",
+        "related_families": [
+          "Prices",
+          "Liquidity",
+          "Liquidations"
+        ]
+      },
+      "implied_volatility": {
+        "title": "Volatilidad Implícita · DVOL / IV1M",
+        "what_measures": "DVOL nativo y transformación visible IV1M calculada por Processing.",
+        "price_relation": "Representa incertidumbre futura descontada, no dirección spot.",
+        "cross_family_relation": "Comparar con RV y OI/liquidaciones durante estrés apalancado.",
+        "interpretation": "Una brecha creciente contra RV indica prima implícita más rica.",
+        "variable_type": "volatilidad implícita",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "Liquidations"
+        ]
+      },
+      "implied_vs_realized": {
+        "title": "Implícita vs Realizada / VRP",
+        "what_measures": "Comparación directa de IV1M, RV30D y su prima de riesgo de volatilidad.",
+        "price_relation": "Muestra si opciones descuentan más o menos movimiento que el realizado.",
+        "cross_family_relation": "Útil con flujos ETF y presión de liquidaciones.",
+        "interpretation": "VRP positivo: IV > RV; VRP negativo: RV > IV.",
+        "variable_type": "valor relativo de volatilidad",
+        "related_families": [
+          "Prices",
+          "ETF",
+          "Liquidations"
+        ]
+      },
+      "term_structure": {
+        "title": "Estructura Temporal IV",
+        "what_measures": "Maturities 1W, 1M, 3M y 6M derivadas por Processing y ancladas a DVOL.",
+        "price_relation": "La pendiente describe cómo se descuenta incertidumbre en el tiempo, no dirección spot.",
+        "cross_family_relation": "Comparar inversiones/empinamiento con estrés de liquidación y cambios de régimen.",
+        "interpretation": "Front-end rico puede señalar riesgo cercano; pendiente positiva implica más volatilidad descontada a plazos mayores.",
+        "variable_type": "estructura temporal de opciones",
+        "related_families": [
+          "Open Interest",
+          "Liquidations",
+          "Prices"
+        ]
+      }
+    },
+    "screen_b": {
+      "volatility_zscore_percentile": {
+        "title": "Z-Score / Percentil de Volatilidad",
+        "what_measures": "Desviación estandarizada de RV7D y percentil empírico dentro de su distribución reciente.",
+        "price_relation": "Lecturas extremas significan magnitud de movimiento inusual, no dirección.",
+        "cross_family_relation": "Comparar con régimen de precios, intensidad de liquidaciones y estrés de liquidez.",
+        "interpretation": "Percentil/z-score altos indican expansión; bajos indican compresión.",
+        "variable_type": "normalización de volatilidad",
+        "related_families": [
+          "Prices",
+          "Liquidations",
+          "Liquidity"
+        ]
+      },
+      "volatility_risk_premium": {
+        "title": "Prima de Riesgo de Volatilidad",
+        "what_measures": "IV1M menos RV30D junto con su z-score móvil.",
+        "price_relation": "Cuantifica qué tan cara/barata está la volatilidad futura frente a la realizada.",
+        "cross_family_relation": "Comparar con OI, posicionamiento de opciones y eventos de estrés.",
+        "interpretation": "Z-score alto positivo implica IV relativamente cara; negativo implica dominio de RV.",
+        "variable_type": "precio relativo de volatilidad",
+        "related_families": [
+          "Open Interest",
+          "Liquidations",
+          "Prices"
+        ]
+      },
+      "term_structure_slope": {
+        "title": "Estructura Temporal IV / Pendiente",
+        "what_measures": "Pendiente y curvatura de la curva 1W/1M/3M/6M derivada por Processing.",
+        "price_relation": "Describe precio temporal del riesgo, no dirección del precio.",
+        "cross_family_relation": "Usar con cambios de régimen y riesgo de eventos/liquidaciones.",
+        "interpretation": "Pendientes fuertes o inversiones muestran dónde se concentra la incertidumbre.",
+        "variable_type": "estructura de curva de opciones",
+        "related_families": [
+          "Open Interest",
+          "Liquidations"
+        ]
+      },
+      "volatility_skew_tail_risk": {
+        "title": "Skew de Volatilidad / Riesgo de Cola",
+        "what_measures": "Asimetría downside/upside y proxy de skew 25Δ.",
+        "price_relation": "Downside IV más cara indica mayor demanda de protección; upside más cara demanda de convexidad alcista.",
+        "cross_family_relation": "Comparar con crowding L/S, liquidaciones y ETF.",
+        "interpretation": "Enfocarse en asimetría y cambios, no sólo en dirección spot.",
+        "variable_type": "asimetría de riesgo de cola",
+        "related_families": [
+          "Liquidations",
+          "ETF",
+          "Open Interest"
+        ]
+      },
+      "vol_of_vol_acceleration": {
+        "title": "Vol-of-Vol / Aceleración",
+        "what_measures": "Cambio en DVOL y aceleración de RV7D.",
+        "price_relation": "Valores crecientes indican volatilidad más inestable o expansión más rápida.",
+        "cross_family_relation": "Útil con deterioro de liquidez y cascadas de liquidación.",
+        "interpretation": "Vol-of-vol alto y aceleración positiva son firmas de estrés/transición.",
+        "variable_type": "dinámica de volatilidad de segundo orden",
+        "related_families": [
+          "Liquidity",
+          "Liquidations",
+          "Prices"
+        ]
+      },
+      "regime_shift_wasserstein": {
+        "title": "Cambio de Régimen / Wasserstein",
+        "what_measures": "Distancia Wasserstein 1-D normalizada entre la distribución RV7D de los 7 días anteriores y la distribución RV7D de los 7 días actuales.",
+        "price_relation": "No es direccional: distancia mayor significa cambio estadístico del régimen de volatilidad, no que el precio deba subir o bajar.",
+        "cross_family_relation": "Comparar con Wasserstein de Prices, desapalancamiento de OI, presión de liquidaciones y estrés de liquidez.",
+        "interpretation": "Cerca de cero significa distribuciones consecutivas similares; una distancia creciente indica transición más fuerte. El porcentaje de transición escala esa intensidad.",
+        "variable_type": "distancia de distribución / cambio de régimen",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "Liquidations",
+          "Liquidity"
+        ]
+      }
+    }
+  },
+  "liquidations": {
+    "kpi": {
+      "long_short_ratio": {
+        "title": "Long/Short Ratio",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      },
+      "liquidation_regime": {
+        "title": "Liquidation Regime",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      },
+      "pressure_score": {
+        "title": "Pressure Score",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      },
+      "pressure_label": {
+        "title": "Pressure Label",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      },
+      "dominant_side": {
+        "title": "Dominant Side",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      },
+      "side_imbalance": {
+        "title": "Side Imbalance",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      },
+      "top_exchange_concentration": {
+        "title": "Top Exchange Concentration",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      },
+      "max_event_spike": {
+        "title": "Max Event Spike",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      },
+      "max_single_liquidation": {
+        "title": "Max Single Liquidation",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      },
+      "nearest_long_cluster": {
+        "title": "Nearest Long Cluster",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      },
+      "nearest_short_cluster": {
+        "title": "Nearest Short Cluster",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      }
+    },
+    "screen_a": {
+      "hyperliquid_map": {
+        "title": "Hyperliquid BTC Liquidation Map",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Open Interest",
+          "CVD",
+          "Liquidity"
+        ]
+      },
+      "exchange_maps": {
+        "title": "BTC Exchange Liquidation Maps",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Open Interest",
+          "CVD",
+          "Volatility"
+        ]
+      },
+      "binance_map": {
+        "title": "Binance BTC/USDT Liquidation Map",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Open Interest",
+          "Liquidity"
+        ]
+      },
+      "long_short_positioning": {
+        "title": "Long / Short Positioning",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Open Interest",
+          "CVD"
+        ]
+      }
+    },
+    "screen_b": {
+      "liquidation_intensity_zscore": {
+        "title": "Liquidation Intensity / Z-Score",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Volatility"
+        ]
+      },
+      "long_short_liquidation_imbalance": {
+        "title": "Long vs Short Liquidation Imbalance",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Volatility"
+        ]
+      },
+      "cascade_acceleration": {
+        "title": "Liquidation Cascade / Acceleration",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Volatility"
+        ]
+      },
+      "price_liquidation_regime": {
+        "title": "Price × Liquidation Regime",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Volatility"
+        ]
+      },
+      "crowding_liquidation_pressure": {
+        "title": "Long/Short Crowding × Liquidation Pressure",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Volatility"
+        ]
+      },
+      "liquidation_regime_hmi": {
+        "title": "Liquidation Regime / Wasserstein",
+        "what_measures": "Métrica de liquidaciones calculada en Processing para este elemento.",
+        "price_relation": "Resume cómo la presión de liquidaciones o los clústeres cercanos pueden relacionarse con el precio de BTC.",
+        "cross_family_relation": "Comparar con Prices, Open Interest/Funding, CVD y Liquidity para confirmación.",
+        "interpretation": "Interpretar magnitud, dirección y cambios de régimen; la HMI sólo representa el resultado de Processing.",
+        "variable_type": "Métrica derivada / estado",
+        "related_families": [
+          "Prices",
+          "Open Interest",
+          "CVD",
+          "Volatility"
+        ]
+      }
+    }
+  },
+  "liquidity": {
+    "kpi": {
+      "bid_depth": {
+        "title": "Profundidad Bid",
+        "what_measures": "Liquidez visible de compra dentro de la ventana contractual de profundidad del 10%.",
+        "price_relation": "Mayor profundidad bid puede amortiguar ventas agresivas; una caída abrupta puede aumentar el deslizamiento bajista.",
+        "cross_family_relation": "Confirmar con imbalance del libro, persistencia de ballenas, CVD y volatilidad.",
+        "interpretation": "Leer nivel y cambio juntos; la profundidad sólo es soporte mientras persista.",
+        "variable_type": "Cantidad de liquidez / stock",
+        "related_families": [
+          "Prices",
+          "CVD",
+          "Volatility"
+        ]
+      },
+      "ask_depth": {
+        "title": "Profundidad Ask",
+        "what_measures": "Liquidez visible de venta dentro de la ventana contractual de profundidad del 10%.",
+        "price_relation": "Mayor profundidad ask puede frenar compras agresivas; su retiro puede abrir un vacío alcista.",
+        "cross_family_relation": "Confirmar con imbalance, persistencia de ballenas, CVD y clústeres de liquidación.",
+        "interpretation": "Comparar contra profundidad bid y vigilar cancelaciones antes de asumir que un muro es estable.",
+        "variable_type": "Cantidad de liquidez / stock",
+        "related_families": [
+          "Prices",
+          "CVD",
+          "Liquidations"
+        ]
+      },
+      "spread": {
+        "title": "Spread",
+        "what_measures": "Distancia entre el mejor bid y el mejor ask visibles.",
+        "price_relation": "Un spread más amplio aumenta la fricción de ejecución y suele acompañar condiciones de menor liquidez.",
+        "cross_family_relation": "Leer junto con impacto de mercado, volatilidad e intensidad de flujo.",
+        "interpretation": "Spread creciente junto con impacto creciente es evidencia más fuerte de estrés.",
+        "variable_type": "Fricción de precio / puntos base",
+        "related_families": [
+          "Prices",
+          "Volatility",
+          "CVD"
+        ]
+      },
+      "liquidity_imbalance": {
+        "title": "Imbalance de Liquidez",
+        "what_measures": "Asimetría normalizada entre profundidad bid y ask.",
+        "price_relation": "Positivo indica mayor soporte bid; negativo mayor resistencia ask.",
+        "cross_family_relation": "Comparar con dirección del CVD, órdenes ballena y presión de liquidaciones.",
+        "interpretation": "Un imbalance persistente que coincide con el flujo ejecutado es más relevante que una sola instantánea.",
+        "variable_type": "Razón normalizada",
+        "related_families": [
+          "CVD",
+          "Liquidations",
+          "Prices"
+        ]
+      },
+      "mid_price": {
+        "title": "Precio Medio",
+        "what_measures": "Punto medio entre el mejor bid y ask, usado como referencia microestructural.",
+        "price_relation": "Ancla distancias del libro, órdenes ballena y contexto de ejecución alrededor de BTC.",
+        "cross_family_relation": "Comparar con OHLCV de Prices; pequeñas diferencias son normales.",
+        "interpretation": "Usarlo como coordenada de referencia, no como señal aislada.",
+        "variable_type": "Precio / USD",
+        "related_families": [
+          "Prices"
+        ]
+      },
+      "impact_1_btc": {
+        "title": "Impacto 1 BTC",
+        "what_measures": "Impacto estimado de ejecutar aproximadamente 1 BTC contra la liquidez visible.",
+        "price_relation": "Mayor impacto significa que la misma operación puede desplazar más el precio.",
+        "cross_family_relation": "Leer con spread, volatilidad, pendiente del libro y flujo ejecutado.",
+        "interpretation": "Impacto creciente con profundidad decreciente es alerta directa de estrés de liquidez.",
+        "variable_type": "Estimación de costo de ejecución",
+        "related_families": [
+          "Prices",
+          "Volatility",
+          "CVD"
+        ]
+      }
+    },
+    "screen_a": {
+      "order_depth": {
+        "title": "Profundidad del Libro",
+        "what_measures": "Cantidad acumulada bid y ask en función de la distancia al mid price.",
+        "price_relation": "Poca profundidad cerca de cero implica menor capacidad para absorber movimiento inmediato.",
+        "cross_family_relation": "Comparar con órdenes ballena, impacto, CVD y mapas de liquidación.",
+        "interpretation": "Buscar asimetrías, escalones y vacíos, no sólo el total mayor.",
+        "variable_type": "Perfil de profundidad / BTC",
+        "related_families": [
+          "Prices",
+          "CVD",
+          "Liquidations"
+        ]
+      },
+      "whale_liquidity_profile": {
+        "title": "Órdenes Ballena",
+        "what_measures": "Órdenes límite grandes en reposo y su distancia al mid price.",
+        "price_relation": "Bids persistentes pueden apoyar precio y asks persistentes limitarlo; las cancelaciones pueden cambiar rápido esa lectura.",
+        "cross_family_relation": "Confirmar con profundidad, persistencia de ballenas y absorción ejecutada.",
+        "interpretation": "Considerar un muro relevante sólo si permanece en actualizaciones estructurales sucesivas.",
+        "variable_type": "Perfil/eventos de liquidez en reposo",
+        "related_families": [
+          "Prices",
+          "CVD"
+        ]
+      },
+      "executed_liquidity_profile": {
+        "title": "Large Trades",
+        "what_measures": "Deltas grandes ejecutados del footprint acumulados en el FIFO rápido.",
+        "price_relation": "Compras ejecutadas consumen asks y ventas ejecutadas consumen bids.",
+        "cross_family_relation": "Leer con CVD, imbalance, absorción y volatilidad.",
+        "interpretation": "Priorizar ejecuciones repetidas del mismo lado y observar si la profundidad se repone o desaparece.",
+        "variable_type": "Perfil de flujo ejecutado",
+        "related_families": [
+          "CVD",
+          "Prices",
+          "Volatility"
+        ]
+      },
+      "executed_operations": {
+        "title": "Zonas de Liquidez Cercanas",
+        "what_measures": "Las zonas de liquidez más fuertes y cercanas del lado bid y ask, seleccionadas por Processing a partir de la profundidad visible y órdenes whale persistentes.",
+        "price_relation": "La liquidez bid bajo el mid puede funcionar como soporte/absorción cercana; la liquidez ask sobre el mid puede funcionar como resistencia/absorción. Distancia y notional indican cercanía y tamaño.",
+        "cross_family_relation": "Comparar las zonas con CVD, respuesta del precio y liquidaciones para evaluar si la liquidez en reposo absorbe flujo o puede ser barrida.",
+        "interpretation": "Una zona grande, persistente y cercana al mid es más relevante de inmediato que una pared lejana. El indicador elige el candidato cercano más fuerte por lado; no implica que la pared necesariamente aguante.",
+        "variable_type": "Estado actual de ubicación de liquidez / notional USD",
+        "related_families": [
+          "CVD",
+          "Prices",
+          "Liquidations"
+        ]
+      },
+      "orderbook_snapshot": {
+        "title": "Instantánea del Order Book",
+        "what_measures": "Niveles bid y ask visibles usados por el contrato de Liquidity.",
+        "price_relation": "Los niveles más cercanos determinan la fricción inmediata alrededor de BTC.",
+        "cross_family_relation": "Leer con perfil de profundidad e impacto.",
+        "interpretation": "Es una instantánea; comparar actualizaciones sucesivas para distinguir estructura persistente de órdenes fugaces.",
+        "variable_type": "Tabla de instantánea",
+        "related_families": [
+          "Prices"
+        ]
+      },
+      "whale_orders_table": {
+        "title": "Tabla de Órdenes Ballena",
+        "what_measures": "Órdenes grandes recientes con lado, precio, tamaño, notional y distancia al mid.",
+        "price_relation": "Órdenes cercanas y persistentes pueden atraer o frenar precio; cancelaciones rápidas pueden exponer vacíos.",
+        "cross_family_relation": "Usar con análisis de persistencia y profundidad.",
+        "interpretation": "Priorizar notional, distancia y persistencia en conjunto.",
+        "variable_type": "Tabla de eventos en reposo",
+        "related_families": [
+          "Prices",
+          "CVD"
+        ]
+      },
+      "large_trades_table": {
+        "title": "Tabla de Large Trades",
+        "what_measures": "Eventos de liquidez ejecutada más nuevos del fast lane ~1 s; máximo 10 nuevos por ciclo y FIFO de 20 visibles.",
+        "price_relation": "Muestra dónde la ejecución agresiva consume liquidez en tiempo casi real.",
+        "cross_family_relation": "Comparar con CVD, respuesta del precio, absorción y spread/impacto.",
+        "interpretation": "Las filas son deltas deduplicados, no copias repetidas de los 500 registros del proveedor.",
+        "variable_type": "Tape de eventos ejecutados",
+        "related_families": [
+          "CVD",
+          "Prices",
+          "Volatility"
+        ]
+      }
+    },
+    "screen_b": {
+      "depth_imbalance_pressure": {
+        "title": "Depth Imbalance / Pressure",
+        "what_measures": "Histórico de asimetría bid/ask, z-score y razón de profundidad.",
+        "price_relation": "Presión positiva persistente puede amortiguar caídas; negativa puede limitar subidas.",
+        "cross_family_relation": "Leer con CVD y persistencia de ballenas.",
+        "interpretation": "El z-score identifica imbalance inusualmente extremo respecto al historial reciente.",
+        "variable_type": "Serie temporal derivada",
+        "related_families": [
+          "CVD",
+          "Prices"
+        ]
+      },
+      "spread_market_impact_liquidity_stress": {
+        "title": "Spread × Market Impact / Liquidity Stress",
+        "what_measures": "Combina spread, impacto estimado de 1 BTC y score normalizado de estrés.",
+        "price_relation": "Estrés alto significa que una orden agresiva puede desplazar más el precio.",
+        "cross_family_relation": "Comparar con régimen de volatilidad e intensidad de Large Trades.",
+        "interpretation": "La señal más fuerte es spread e impacto deteriorándose simultáneamente.",
+        "variable_type": "Métrica compuesta de estrés",
+        "related_families": [
+          "Volatility",
+          "Prices",
+          "CVD"
+        ]
+      },
+      "liquidity_wall_concentration_vacuum": {
+        "title": "Liquidity Wall / Concentration + Vacuum",
+        "what_measures": "Mide concentración de muros visibles y vacíos direccionales de poca profundidad.",
+        "price_relation": "Los muros pueden frenar precio; los vacíos pueden acelerar movimiento.",
+        "cross_family_relation": "Usar con clústeres de liquidación y persistencia de ballenas.",
+        "interpretation": "Un muro con baja persistencia es más débil que uno menor pero estable.",
+        "variable_type": "Score de estructura",
+        "related_families": [
+          "Liquidations",
+          "Prices"
+        ]
+      },
+      "whale_persistence_cancellation": {
+        "title": "Whale Persistence / Cancellation Activity",
+        "what_measures": "Mide cuánto permanecen órdenes grandes y qué tan agresivamente se retiran.",
+        "price_relation": "Órdenes persistentes pueden formar soporte/resistencia; cancelaciones bruscas pueden preceder repricing.",
+        "cross_family_relation": "Comparar con CVD y scores de vacuum.",
+        "interpretation": "Picos de cancelación reducen el valor informativo de los muros visibles.",
+        "variable_type": "Métrica conductual de liquidez",
+        "related_families": [
+          "Prices",
+          "CVD"
+        ]
+      },
+      "executed_liquidity_absorption": {
+        "title": "Executed Liquidity / Absorption",
+        "what_measures": "Mide ejecución agresiva buy/sell frente a la respuesta del libro y absorción neta.",
+        "price_relation": "Absorción alta implica mucho flujo ejecutado sin desplazamiento equivalente de precio.",
+        "cross_family_relation": "Leer con CVD y Prices para separar absorción de continuación direccional.",
+        "interpretation": "Absorción buy fuerte puede indicar reposición de asks; sell fuerte, reposición de bids.",
+        "variable_type": "Métrica derivada de flujo/absorción",
+        "related_families": [
+          "CVD",
+          "Prices"
+        ]
+      },
+      "liquidity_regime_hmi": {
+        "title": "Liquidity Regime / HMI + Wasserstein",
+        "what_measures": "Estado compuesto de liquidez y distancia Wasserstein entre distribuciones microestructurales recientes.",
+        "price_relation": "Un cambio de régimen puede indicar un entorno de ejecución materialmente distinto para BTC.",
+        "cross_family_relation": "Comparar con régimen de volatilidad, Prices y presión de liquidaciones.",
+        "interpretation": "El warm-up de Wasserstein es dato ausente, no cero; distancia creciente indica cambio distributivo.",
+        "variable_type": "Métrica de régimen / distancia distributiva",
+        "related_families": [
+          "Volatility",
+          "Prices",
+          "Liquidations"
+        ]
+      }
+    },
+    "summary": {
+      "regime": {
+        "title": "Régimen de Liquidez",
+        "what_measures": "Estado actual de liquidez clasificado por Processing.",
+        "price_relation": "Resume si las condiciones son favorables, neutrales o estresadas alrededor de BTC.",
+        "cross_family_relation": "Confirmar con regímenes de volatilidad y liquidaciones.",
+        "interpretation": "Usar como etiqueta respaldada por los componentes de Screen B, no aislada.",
+        "variable_type": "Estado categórico",
+        "related_families": [
+          "Volatility",
+          "Liquidations"
+        ]
+      },
+      "depth_imbalance": {
+        "title": "Depth Imbalance",
+        "what_measures": "Última asimetría normalizada bid/ask.",
+        "price_relation": "Positivo favorece profundidad bid; negativo favorece profundidad ask.",
+        "cross_family_relation": "Confirmar con CVD y órdenes ballena.",
+        "interpretation": "La magnitud importa más cuando persiste entre refresh estructurales.",
+        "variable_type": "Razón normalizada",
+        "related_families": [
+          "CVD",
+          "Prices"
+        ]
+      },
+      "liquidity_stress": {
+        "title": "Liquidity Stress",
+        "what_measures": "Último score compuesto de deterioro spread/impacto.",
+        "price_relation": "Mayor valor implica mayor fricción y vulnerabilidad a desplazamiento del precio.",
+        "cross_family_relation": "Leer con volatilidad y flujo ejecutado.",
+        "interpretation": "Estrés creciente durante Large Trades merece más atención que un pico aislado.",
+        "variable_type": "Score compuesto",
+        "related_families": [
+          "Volatility",
+          "CVD"
+        ]
+      },
+      "absorption": {
+        "title": "Absorción",
+        "what_measures": "Último estado de absorción neta de liquidez ejecutada.",
+        "price_relation": "Muestra si el flujo agresivo está siendo absorbido sin mover BTC proporcionalmente.",
+        "cross_family_relation": "Comparar con CVD y cambio de precio.",
+        "interpretation": "Flujo grande con poco movimiento implica mayor absorción.",
+        "variable_type": "Score derivado de flujo",
+        "related_families": [
+          "CVD",
+          "Prices"
+        ]
+      },
+      "wasserstein": {
+        "title": "Wasserstein",
+        "what_measures": "Última distancia distributiva entre estados recientes de liquidez.",
+        "price_relation": "Valores mayores indican mayor cambio en el entorno microestructural alrededor de BTC.",
+        "cross_family_relation": "Leer con Wasserstein/régimen de Volatility y régimen de Liquidations.",
+        "interpretation": "Usar cambio y persistencia, no un único valor absoluto.",
+        "variable_type": "Distancia distributiva",
+        "related_families": [
+          "Volatility",
+          "Liquidations"
+        ]
+      }
+    }
+  }
+}

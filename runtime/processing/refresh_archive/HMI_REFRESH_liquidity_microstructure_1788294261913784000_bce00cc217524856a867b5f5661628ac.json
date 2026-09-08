@@ -1,0 +1,9 @@
+{
+  "schema": "tradelatin.hmi.refresh-request.v1",
+  "request_id": "HMI_REFRESH_liquidity_microstructure_1788294261913784000_bce00cc217524856a867b5f5661628ac",
+  "family": "liquidity_microstructure",
+  "reason": "manual",
+  "contract_file": "liquidity_microstructure_VR1_FINAL.json",
+  "requested_at": "2026-09-01T20:24:21.913854+00:00",
+  "requested_at_epoch": 1788294261.9138508
+}

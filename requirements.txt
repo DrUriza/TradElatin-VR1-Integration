@@ -1,2 +1,5 @@
-dash==4.4.1
-plotly==6.9.0
+-r emulator/requirements.txt
+-r screen/requirements.txt
+-e ./processing
+python-dotenv>=1.0,<2
+requests>=2.32,<3
