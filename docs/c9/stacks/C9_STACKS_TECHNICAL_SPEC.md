@@ -30,24 +30,19 @@ The proposed Integration orchestration is:
 
 ```text
 Emulator or Live Source
-↓
-Processing Acquisition
-↓
-C9 Normalization/Processing
-↓
-Versioned C9 Contracts
-↓
-Screen
-↓
-End-to-End Integration Tests
+→ Processing Acquisition
+→ C9 Normalization / Processing
+→ Versioned C9 Contracts
+→ Screen
+→ End-to-End Integration Tests
 ```
 
 "C9 owns the Stacks/sBTC data, while C1–C8 can consume C9 observables for cross-family contextual analysis."
 
-C9 therefore owns acquisition semantics, normalization, provenance and contract
-versioning for Stacks/sBTC. Cross-family consumption does not transfer ownership
-to C1–C8 and must not relabel C9 primitives as native exchange, derivatives,
-miner or order-book measurements.
+C9 therefore owns source semantics, normalization, provenance and contract
+versioning for Stacks/sBTC. C1–C8 are possible contextual consumers, never
+owners of C9 data. Cross-family use must not relabel C9 primitives as native
+exchange, derivatives, miner or order-book measurements.
 
 ## Current Integration boundary
 
@@ -59,14 +54,29 @@ credentials and provider data access.
 
 Current Integration does **not**:
 
-- connect to Stacks, Hiro, Emily or an sBTC data source;
+- acquire Stacks/sBTC data;
+- normalize Stacks/sBTC payloads;
+- calculate C9 financial observables;
+- render a C9 HMI;
+- execute C9 end-to-end tests;
+- connect to Stacks, Hiro, Emily or another sBTC data source;
 - configure or start a Stacks adapter;
 - register C9 in `main.py`;
 - create an additional process or scheduler family;
 - publish or validate a C9 runtime contract;
-- include C9 fixtures or replay scenarios;
-- expose a C9 Screen route;
-- execute C9 end-to-end tests.
+- include C9 fixtures or replay scenarios.
+
+## Responsibility boundaries
+
+| Component | Current responsibility | Future funded C9 responsibility |
+|---|---|---|
+| Integration | Orchestrate and validate C1–C8 services. | Orchestrate the implemented C9 flow, readiness, lifecycle and E2E validation. |
+| Processing | Acquire, normalize and compute existing C1–C8 data. | Own Stacks acquisition adapters, C9 normalization and C9 computation. |
+| Emulator | Provide current deterministic synthetic/replay inputs. | Provide future C9 synthetic/replay source behavior. |
+| Screen | Represent current versioned C1–C8 contracts. | Represent future versioned C9 contracts without recalculating them. |
+
+Integration remains orchestration-only. It must not absorb provider acquisition,
+normalization, financial computation or HMI representation.
 
 ## Future source substitution boundary
 
@@ -80,7 +90,7 @@ Live Stacks/sBTC provider
               ↗
 Future C9 Emulator/replay
 ↓
-C9 Normalization/Processing
+C9 Normalization / Processing
 ↓
 Versioned C9 Contracts
 ```
@@ -93,8 +103,6 @@ launch and observe the authorized source without moving normalization or market
 logic into the launcher.
 
 ## Frozen C9 financial observables
-
-The future C9 contract family freezes these three observables:
 
 1. **C9.1 — sBTC Supply & Peg State**  
    Describes observable sBTC supply, reconciliation and peg-state context.
@@ -109,30 +117,38 @@ These names are frozen for documentation and future contract design. Their
 adapters, schemas, routes and runtime implementations remain
 **PROPOSED / NOT IMPLEMENTED**.
 
-## Frozen future data catalog
+## Canonical future source-surface catalog
 
-The C9 Core surfaces are:
+The shared C9 planning catalog contains exactly 14 proposed logical source
+surfaces: 6 Core and 8 transversal. None is currently registered or executed by
+Integration.
 
-- `sbtc_token_supply`
-- `sbtc_bridge_deposits`
-- `sbtc_bridge_withdrawals`
-- `sbtc_bridge_limits`
-- `sbtc_bridge_chainstate`
-- `sbtc_signer_state`
+### Core surfaces
 
-The transversal surfaces are:
+| Source surface | Owned observable(s) | Contextual consumers |
+|---|---|---|
+| `sbtc_token_supply` | C9.1 | C5 |
+| `sbtc_bridge_deposits` | C9.2; C9.3 where applicable | C4, C5, C6 |
+| `sbtc_bridge_withdrawals` | C9.2; C9.3 where applicable | C4, C5, C6 |
+| `sbtc_bridge_limits` | C9.3 | C4, C6 |
+| `sbtc_bridge_chainstate` | C9.3 | C4, C5, C6 |
+| `sbtc_signer_state` | C9.3 | C5, C6 |
 
-- `sbtc_ft_transfers`
-- `sbtc_holder_distribution`
-- `sbtc_dex_trades`
-- `sbtc_amm_pool_state`
-- `sbtc_lending_market_state`
-- `sbtc_protocol_liquidations`
-- `stacks_fee_state`
-- `stacks_mempool_activity`
+### Transversal surfaces
 
-The identifiers match the shared C9 catalog used by the other VR1
-repositories. They are catalog entries, not implemented Integration endpoints.
+| Source surface | Contextual consumers |
+|---|---|
+| `sbtc_ft_transfers` | C2, C5 |
+| `sbtc_holder_distribution` | C5 |
+| `sbtc_dex_trades` | C1, C2, C8 |
+| `sbtc_amm_pool_state` | C1, C8 |
+| `sbtc_lending_market_state` | C3, C6 |
+| `sbtc_protocol_liquidations` | C6, C7 |
+| `stacks_fee_state` | C6 |
+| `stacks_mempool_activity` | C6 |
+
+C9 is the owner, not a contextual consumer. These identifiers are planning
+catalog entries, not active Integration endpoints.
 
 ## Future Integration responsibilities
 
@@ -149,9 +165,8 @@ When funded and authorized, Integration would be responsible for:
 - running reproducible end-to-end validation across Emulator/Live Source,
   Processing, versioned contracts and Screen.
 
-Integration must remain orchestration-only. Provider acquisition belongs to
-Processing adapters, financial transformations belong to Processing, and
-presentation belongs to Screen.
+These responsibilities begin only after the corresponding C9 components are
+implemented during future milestones.
 
 ## Future end-to-end acceptance model
 
@@ -172,11 +187,10 @@ today and is not evidence of completed grant work.
 
 ## Semantic safeguards
 
-- Token transfers may contextualize C2, but **transfers != CVD automatically**.
+- Token transfers may contextualize C2 and C5, but **transfers != CVD automatically**.
 - Lending state may contextualize C3, but **lending != Open Interest/Funding**.
 - AMM pool state may contextualize C8, but **AMM liquidity != order-book depth**.
-- Protocol liquidations may contextualize C7, but **protocol liquidations !=
-  derivatives liquidations**.
+- Protocol liquidations may contextualize C7, but **protocol liquidations != derivatives liquidations**.
 
 Every future derivation must preserve source surface, transformation, contract
 version, provenance and limitations.
