@@ -45,4 +45,41 @@ The root suite discovers Integration, Emulator, Processing and Screen tests.
   and the canonical BTC Spot price otherwise, so Emulator mode never publishes
   an all-null chart.
 
+## Future C9 / Stacks integration
+
+**Status: PROPOSED / NOT IMPLEMENTED**
+
+Current Integration launches and validates the existing C1–C8 Emulator,
+Processing and Screen stack. Current C1–C8 public validation is primarily
+emulator/synthetic/replay. Live-provider acquisition paths exist in Processing
+but require external credentials and data access.
+
+Current Integration does not include a Stacks adapter or C9 Stacks runtime. It
+does not start a Stacks process, publish a C9 contract, include C9 fixtures or
+run C9 end-to-end tests. Future funded C9 work would extend the same Integration
+pattern to Stacks/sBTC:
+
+```text
+Emulator or Live Source
+↓
+Processing Acquisition
+↓
+C9 Normalization/Processing
+↓
+Versioned C9 Contracts
+↓
+Screen
+↓
+End-to-End Integration Tests
+```
+
+End-to-end C9 validation is a future milestone, not current prior work. This
+documentation does not claim that any grant milestone (M1, M2 or M3) has been
+completed.
+
+Future design documents:
+
+- [C9 / Stacks Technical Specification](docs/c9/stacks/C9_STACKS_TECHNICAL_SPEC.md)
+- [C9 / Stacks Endpoint Catalog](docs/c9/stacks/C9_STACKS_ENDPOINT_CATALOG.md)
+
 Press `Ctrl+C` in the Integration console for a graceful shutdown.
