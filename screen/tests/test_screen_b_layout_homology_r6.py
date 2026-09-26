@@ -66,7 +66,7 @@ def test_liquidity_selector_uses_shared_screen_b_visual_grammar() -> None:
 
 def test_r6_build_identity_is_exact() -> None:
     app = (ROOT / "app.py").read_text(encoding="utf-8")
-    assert '"V4.2_FINAL_R10_GROK_RADAR_HF3.1"' in app
+    assert '"V4.2_FINAL_R10_GROK_RADAR_HF3.2"' in app
 
 
 def test_modified_python_files_parse() -> None:

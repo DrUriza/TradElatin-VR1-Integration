@@ -25,14 +25,16 @@ CONTRACTS = RUNTIME / "contracts"
 REFRESH = RUNTIME / "refresh_requests"
 PROCESSING_RUNTIME = RUNTIME / "processing"
 PROCESSING_STATUS = PROCESSING_RUNTIME / "refresh_status.json"
+SOURCE_CONTROL = PROCESSING_RUNTIME / "source_control.json"
+SOURCE_STATUS = PROCESSING_RUNTIME / "source_status"
 SHUTDOWN_REQUESTED = threading.Event()
 PROJECT_PYTHON = ROOT / ".venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
-BUILD_ID = "V4.2_FINAL_R10_GROK_RADAR_HF3.1"
+BUILD_ID = "V4.2_FINAL_R10_GROK_RADAR_HF3.2"
 # Contract compatibility is independent from the HMI build. R5 introduced the
 # current contract semantics; R6 was visual-only. Do not rebuild eight families
 # merely because Screen/CSS changed.
 CONTRACT_SCHEMA_ID = "V4.2_CONTRACT_SCHEMA_R5"
-CONTRACT_COMPATIBLE_BUILD_IDS = {"V4.2_FINAL_R5", "V4.2_FINAL_R6", "V4.2_FINAL_R7", "V4.2_FINAL_R8", "V4.2_FINAL_R9", "V4.2_FINAL_R10", "V4.2_FINAL_R10_GROK_RADAR", "V4.2_FINAL_R10_GROK_RADAR_HF1", "V4.2_FINAL_R10_GROK_RADAR_HF2", "V4.2_FINAL_R10_GROK_RADAR_HF3", "V4.2_FINAL_R10_GROK_RADAR_HF3.1"}
+CONTRACT_COMPATIBLE_BUILD_IDS = {"V4.2_FINAL_R5", "V4.2_FINAL_R6", "V4.2_FINAL_R7", "V4.2_FINAL_R8", "V4.2_FINAL_R9", "V4.2_FINAL_R10", "V4.2_FINAL_R10_GROK_RADAR", "V4.2_FINAL_R10_GROK_RADAR_HF1", "V4.2_FINAL_R10_GROK_RADAR_HF2", "V4.2_FINAL_R10_GROK_RADAR_HF3", "V4.2_FINAL_R10_GROK_RADAR_HF3.1", "V4.2_FINAL_R10_GROK_RADAR_HF3.2"}
 BOOTSTRAP_BUILD_MARKER = RUNTIME / "bootstrap_build.json"
 ENV_FILE = ROOT / ".env"
 INTEGRATION_LOCK = RUNTIME / "integration.lock.json"
@@ -719,6 +721,8 @@ def _build_environment() -> dict[str, str]:
             "TRADELATIN_CONTRACT_DIR": str(CONTRACTS),
             "TRADELATIN_REFRESH_DIR": str(REFRESH),
             "TRADELATIN_RUNTIME_DIR": str(PROCESSING_RUNTIME),
+            "TRADELATIN_SOURCE_CONTROL_PATH": str(SOURCE_CONTROL),
+            "TRADELATIN_SOURCE_STATUS_DIR": str(SOURCE_STATUS),
             "TRADELATIN_HOST": screen_host,
             "TRADELATIN_PORT": screen_port,
             "TRADELATIN_SCREEN_BUILD_ID": BUILD_ID,
@@ -799,7 +803,7 @@ def main() -> int:
 
         print("[PROCESSING] START continuous runtime", flush=True)
         processing = _service_popen(
-            [sys.executable, "main.py", "--source", "emulator", "--contracts-root", str(CONTRACTS)],
+            [sys.executable, "main.py", "--source", "auto", "--contracts-root", str(CONTRACTS)],
             cwd=PROCESSING,
             env=env,
             console_output=True,

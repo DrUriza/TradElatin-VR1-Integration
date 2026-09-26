@@ -9,6 +9,7 @@
   outline: none;
   cursor: help;
 }
+
 .context-help-anchor:focus-visible {
   border-radius: 3px;
   box-shadow: 0 0 0 1px rgba(34, 199, 255, .55);
@@ -37,10 +38,11 @@
   background: rgba(34, 199, 255, .17);
   color: #d7f5ff;
 }
-.context-help-popover {
+.context-help-anchor > .context-help-popover { display: none !important; }
+.context-help-portal {
   position: fixed;
-  left: var(--context-help-left, 12px);
-  top: var(--context-help-top, 12px);
+  left: 12px;
+  top: 12px;
   z-index: 2147483000;
   width: var(--context-help-width, min(340px, calc(100vw - 24px)));
   max-width: calc(100vw - 24px);
@@ -54,29 +56,18 @@
   box-shadow: 0 18px 52px rgba(0, 0, 0, .52);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(4px) scale(.995);
-  transform-origin: top center;
-  transition:
-    opacity .16s ease,
-    transform .16s ease,
-    visibility 0s linear .16s;
+  transform: none;
+  transition: none;
   pointer-events: none;
   text-align: left;
   white-space: normal;
   text-transform: none;
   letter-spacing: normal;
 }
-.context-help-anchor:hover .context-help-popover,
-.context-help-anchor:focus-within .context-help-popover {
+.context-help-portal.context-help-portal-visible {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0) scale(1);
-  transition-delay: .24s, .24s, 0s;
   pointer-events: auto;
-}
-.context-help-measuring {
-  display: block !important;
-  transition: none !important;
 }
 .context-help-popover-header {
   display: flex;
@@ -160,12 +151,9 @@
 }
 @media (hover: none), (pointer: coarse) {
   .context-help-anchor { cursor: pointer; }
-  .context-help-anchor:hover .context-help-popover:not(:focus-within) {
-    transition-delay: 0s;
-  }
 }
 @media (max-width: 760px) {
-  .context-help-popover {
+  .context-help-portal {
     left: 12px !important;
     right: 12px;
     top: auto !important;
@@ -182,7 +170,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .context-help-popover,
+  .context-help-portal,
   .context-help-icon {
     transition: none !important;
   }

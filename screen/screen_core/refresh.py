@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
+from .source_control import FAMILIES, write_source_control
 
 # HMI contract-watch cadence.  Processing still owns the market-data cadence
 # (Prices=5 s, Liquidity=5 s, CVD=15 s). Prices and Liquidity are watched every
@@ -42,6 +43,7 @@ class RefreshDispatch:
     started: bool
     family: str
     endpoint: str | None
+    request_id: str | None = None
 
 
 def processing_refresh_dir() -> Path:
@@ -104,6 +106,15 @@ def request_family_refresh_async(*, family: str, reason: str, contract_file: str
         _write_request(destination, payload)
     except OSError as exc:
         _trace(f"family={canonical_family} request failed: {exc}")
-        return RefreshDispatch(False, False, canonical_family, str(destination))
+        return RefreshDispatch(False, False, canonical_family, str(destination), request_id)
     _trace(f"family={canonical_family} request={destination}")
-    return RefreshDispatch(True, True, canonical_family, str(destination))
+    return RefreshDispatch(True, True, canonical_family, str(destination), request_id)
+
+def request_source_mode_async(*, requested_mode: str, contract_file: str) -> RefreshDispatch:
+    control=write_source_control(requested_mode); request_root=processing_refresh_dir(); unique=f"{time.time_ns()}_{uuid4().hex}"; request_id=f"HMI_SOURCE_{requested_mode.upper()}_{unique}"
+    payload={"schema":"tradelatin.hmi.source-refresh-request.v1","request_id":request_id,"families":list(FAMILIES),"reason":"source_mode","requested_mode":requested_mode,"source_generation":control["generation"],"contract_file":contract_file,"requested_at":datetime.now(tz=UTC).isoformat(),"requested_at_epoch":time.time()}
+    destination=request_root/f"{request_id}.json"
+    try: _write_request(destination,payload)
+    except OSError as exc:
+        _trace(f"source={requested_mode} request failed: {exc}"); return RefreshDispatch(False,False,"all",str(destination),request_id)
+    return RefreshDispatch(True,True,"all",str(destination),request_id)

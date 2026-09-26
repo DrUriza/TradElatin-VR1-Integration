@@ -42,7 +42,7 @@ def test_requests_dependency_is_declared_in_screen() -> None:
 
 def test_contract_schema_remains_unchanged() -> None:
     source = APP.read_text(encoding="utf-8")
-    assert 'SCREEN_BUILD_ID = os.getenv("TRADELATIN_SCREEN_BUILD_ID", "V4.2_FINAL_R10_GROK_RADAR_HF3.1")' in source
+    assert 'SCREEN_BUILD_ID = os.getenv("TRADELATIN_SCREEN_BUILD_ID", "V4.2_FINAL_R10_GROK_RADAR_HF3.2")' in source
 
 
 def test_modified_python_files_parse() -> None:

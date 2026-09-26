@@ -1,71 +1,48 @@
 (function () {
-  const EDGE = 12;
-  const GAP = 8;
-
-  function positionPopover(anchor) {
-    const popover = anchor && anchor.querySelector('.context-help-popover');
-    if (!anchor || !popover) return;
-
-    const anchorRect = anchor.getBoundingClientRect();
-    const previousVisibility = popover.style.visibility;
-    const previousOpacity = popover.style.opacity;
-    const previousPointerEvents = popover.style.pointerEvents;
-
-    popover.style.visibility = 'hidden';
-    popover.style.opacity = '0';
-    popover.style.pointerEvents = 'none';
-    popover.classList.add('context-help-measuring');
-
-    const popRect = popover.getBoundingClientRect();
-    const width = Math.min(popRect.width || 340, window.innerWidth - EDGE * 2);
-    const height = popRect.height || 260;
-
-    let left = anchorRect.left + anchorRect.width / 2 - width / 2;
-    left = Math.max(EDGE, Math.min(left, window.innerWidth - width - EDGE));
-
-    let top = anchorRect.bottom + GAP;
-    if (top + height > window.innerHeight - EDGE) {
-      top = anchorRect.top - height - GAP;
-    }
+  'use strict';
+  const EDGE = 12, GAP = 8, PORTAL_ID = 'context-help-portal';
+  let activeAnchor = null, lastPointer = { x: -1, y: -1 };
+  function portal() {
+    let node = document.getElementById(PORTAL_ID);
+    if (node) return node;
+    node = document.createElement('div'); node.id = PORTAL_ID; node.className = 'context-help-portal';
+    node.setAttribute('role', 'dialog'); node.setAttribute('aria-live', 'polite'); document.body.appendChild(node); return node;
+  }
+  function sourcePopover(anchor) { return anchor && anchor.querySelector(':scope > .context-help-popover'); }
+  function position(anchor) {
+    const layer = portal(); if (!anchor || !anchor.isConnected || !layer.classList.contains('context-help-portal-visible')) return;
+    const rect = anchor.getBoundingClientRect(), width = Math.min(layer.offsetWidth || 340, window.innerWidth - EDGE * 2), height = layer.offsetHeight || 260;
+    let left = Math.max(EDGE, Math.min(rect.left + rect.width / 2 - width / 2, window.innerWidth - width - EDGE));
+    let top = rect.bottom + GAP; if (top + height > window.innerHeight - EDGE) top = rect.top - height - GAP;
     top = Math.max(EDGE, Math.min(top, window.innerHeight - height - EDGE));
-
-    popover.style.setProperty('--context-help-left', `${Math.round(left)}px`);
-    popover.style.setProperty('--context-help-top', `${Math.round(top)}px`);
-    popover.style.setProperty('--context-help-width', `${Math.round(width)}px`);
-
-    popover.classList.remove('context-help-measuring');
-    popover.style.visibility = previousVisibility;
-    popover.style.opacity = previousOpacity;
-    popover.style.pointerEvents = previousPointerEvents;
+    layer.style.left = `${Math.round(left)}px`; layer.style.top = `${Math.round(top)}px`; layer.style.width = `${Math.round(width)}px`;
   }
-
-  function placeFromEvent(event) {
-    const anchor = event.target && event.target.closest
-      ? event.target.closest('.context-help-anchor')
-      : null;
-    if (anchor) positionPopover(anchor);
+  function show(anchor) {
+    const source = sourcePopover(anchor); if (!source) return; const layer = portal(); activeAnchor = anchor;
+    layer.replaceChildren.apply(layer, Array.from(source.childNodes).map(child => child.cloneNode(true)));
+    layer.classList.add('context-help-portal-visible'); anchor.setAttribute('aria-expanded', 'true'); position(anchor);
   }
-
-  document.addEventListener('pointerenter', placeFromEvent, true);
-  document.addEventListener('focusin', placeFromEvent, true);
-  document.addEventListener('touchstart', function (event) {
-    const anchor = event.target && event.target.closest
-      ? event.target.closest('.context-help-anchor')
-      : null;
-    if (!anchor) return;
-    positionPopover(anchor);
-    if (typeof anchor.focus === 'function') {
-      anchor.focus({ preventScroll: true });
-    }
-  }, { passive: true, capture: true });
-
-  window.addEventListener('resize', function () {
-    const active = document.querySelector('.context-help-anchor:hover, .context-help-anchor:focus-within');
-    if (active) positionPopover(active);
-  });
-
-  window.addEventListener('scroll', function () {
-    const active = document.querySelector('.context-help-anchor:hover, .context-help-anchor:focus-within');
-    if (active) positionPopover(active);
+  function hide() {
+    const layer = portal(); if (activeAnchor && activeAnchor.isConnected) activeAnchor.setAttribute('aria-expanded', 'false');
+    activeAnchor = null; layer.classList.remove('context-help-portal-visible');
+  }
+  function anchorFromPoint() {
+    if (lastPointer.x < 0 || lastPointer.y < 0) return null; const node = document.elementFromPoint(lastPointer.x, lastPointer.y);
+    return node && node.closest ? node.closest('.context-help-anchor') : null;
+  }
+  document.addEventListener('pointermove', event => { lastPointer = { x: event.clientX, y: event.clientY }; }, true);
+  document.addEventListener('pointerover', event => { const anchor = event.target && event.target.closest ? event.target.closest('.context-help-anchor') : null; if (anchor) show(anchor); }, true);
+  document.addEventListener('pointerout', event => {
+    const anchor = event.target && event.target.closest ? event.target.closest('.context-help-anchor') : null;
+    if (!anchor || anchor !== activeAnchor) return; const related = event.relatedTarget;
+    if (related && (anchor.contains(related) || portal().contains(related))) return;
+    window.setTimeout(() => { const replacement = anchorFromPoint(); if (replacement) show(replacement); else if (!portal().matches(':hover')) hide(); }, 0);
   }, true);
+  document.addEventListener('focusin', event => { const anchor = event.target && event.target.closest ? event.target.closest('.context-help-anchor') : null; if (anchor) show(anchor); }, true);
+  document.addEventListener('focusout', event => { if (!activeAnchor || (event.relatedTarget && portal().contains(event.relatedTarget))) return; window.setTimeout(() => { const focused = document.activeElement; if (!focused || !focused.closest || !focused.closest('.context-help-anchor')) hide(); }, 0); }, true);
+  document.addEventListener('touchstart', event => { const anchor = event.target && event.target.closest ? event.target.closest('.context-help-anchor') : null; if (anchor) { event.preventDefault(); if (activeAnchor === anchor && portal().classList.contains('context-help-portal-visible')) hide(); else show(anchor); return; } if (!portal().contains(event.target)) hide(); }, { passive: false, capture: true });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') hide(); });
+  window.addEventListener('resize', () => position(activeAnchor)); window.addEventListener('scroll', () => position(activeAnchor), true);
+  new MutationObserver(() => { if (!activeAnchor || activeAnchor.isConnected) return; const replacement = anchorFromPoint(); if (replacement) { activeAnchor = replacement; replacement.setAttribute('aria-expanded', 'true'); position(replacement); } }).observe(document.documentElement, { childList: true, subtree: true });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', portal, { once: true }); else portal();
 })();

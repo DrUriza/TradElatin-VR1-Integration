@@ -6,20 +6,24 @@ endpoint_id, path and params); Acquisition decides *where* the request goes.
 """
 from __future__ import annotations
 
+import atexit
 import hashlib
+import http.client
 import json
 import os
 import tempfile
+import threading
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
 from processing_signals.main.atomic_replace import replace_with_retry
 
-SOURCE_MODES = {"emulator", "live"}
+SOURCE_MODES = {"emulator", "live", "auto"}
 EMULATOR_RECORD_LIMIT = 500
 
 # Frozen VR1 external surface: 20 CoinGlass + 4 CryptoQuant + 9 Glassnode.
@@ -73,6 +77,103 @@ LIVE_BASE_URLS = {
     "glassnode": "https://api.glassnode.com",
 }
 
+# Emulator requests are frequent and target one local service.  Reuse one
+# connection per origin/timeout inside a process, including across short-lived
+# AcquisitionClient instances.  LIVE providers deliberately keep the existing
+# urllib path and are never stored in this pool.
+_EMULATOR_CONNECTIONS: dict[
+    tuple[str, str, int, float], http.client.HTTPConnection
+] = {}
+_EMULATOR_CONNECTION_LOCK = threading.RLock()
+
+
+def _close_connection(connection: http.client.HTTPConnection) -> None:
+    try:
+        connection.close()
+    except (OSError, http.client.HTTPException):
+        # Cleanup is best-effort and must stay safe during interpreter shutdown.
+        pass
+
+
+def _close_emulator_connections() -> None:
+    """Close and forget all pooled Emulator connections.
+
+    The operation is idempotent and intentionally private: normal callers do
+    not manage the pool, while tests and process lifecycle hooks can force a
+    deterministic shutdown.
+    """
+    with _EMULATOR_CONNECTION_LOCK:
+        connections = tuple(_EMULATOR_CONNECTIONS.values())
+        _EMULATOR_CONNECTIONS.clear()
+    for connection in connections:
+        _close_connection(connection)
+
+
+atexit.register(_close_emulator_connections)
+
+
+def _emulator_origin(url: str, timeout_seconds: float) -> tuple[
+    tuple[str, str, int, float], str
+]:
+    parsed = urlsplit(url)
+    scheme = parsed.scheme.lower()
+    if scheme not in {"http", "https"} or not parsed.hostname:
+        raise RuntimeError("invalid_emulator_url")
+    port = parsed.port or (443 if scheme == "https" else 80)
+    target = parsed.path or "/"
+    if parsed.query:
+        target = f"{target}?{parsed.query}"
+    return (scheme, parsed.hostname, port, float(timeout_seconds)), target
+
+
+def _new_emulator_connection(
+    key: tuple[str, str, int, float]
+) -> http.client.HTTPConnection:
+    scheme, host, port, timeout = key
+    connection_type = (
+        http.client.HTTPSConnection if scheme == "https" else http.client.HTTPConnection
+    )
+    return connection_type(host, port, timeout=timeout)
+
+
+def _drop_emulator_connection(
+    key: tuple[str, str, int, float], connection: http.client.HTTPConnection
+) -> None:
+    if _EMULATOR_CONNECTIONS.get(key) is connection:
+        _EMULATOR_CONNECTIONS.pop(key, None)
+    _close_connection(connection)
+
+
+def _fetch_emulator(
+    *, provider: str, url: str, headers: Mapping[str, str], timeout_seconds: float
+) -> bytes:
+    """GET an Emulator payload, retrying once after a broken connection."""
+    key, target = _emulator_origin(url, timeout_seconds)
+    with _EMULATOR_CONNECTION_LOCK:
+        for attempt in range(2):
+            connection = _EMULATOR_CONNECTIONS.get(key)
+            if connection is None:
+                connection = _new_emulator_connection(key)
+                _EMULATOR_CONNECTIONS[key] = connection
+            try:
+                connection.request("GET", target, headers=dict(headers))
+                response = connection.getresponse()
+                body = response.read()
+                status = int(response.status)
+                if status >= 400:
+                    detail = body[:512].decode("utf-8", errors="replace")
+                    raise RuntimeError(
+                        f"provider_http_error:{provider}:{status}:{detail}"
+                    )
+                return body
+            except RuntimeError:
+                raise
+            except (http.client.HTTPException, OSError) as exc:
+                _drop_emulator_connection(key, connection)
+                if attempt == 1:
+                    raise RuntimeError(f"provider_connection_error:emulator:{exc}") from exc
+        raise AssertionError("unreachable_emulator_retry_state")
+
 
 def _atomic_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -90,6 +191,63 @@ def _atomic_json(path: Path, payload: Any) -> None:
         except OSError:
             pass
         raise
+
+
+def _source_control() -> tuple[str, str]:
+    path = Path(
+        os.environ.get("TRADELATIN_SOURCE_CONTROL_PATH", "").strip()
+        or Path(__file__).resolve().parents[4] / "data" / "runtime" / "source_control.json"
+    )
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        payload = {}
+    requested = str(payload.get("requested_mode") or "synthetic").lower()
+    if requested not in {"live", "synthetic"}:
+        requested = "synthetic"
+    return requested, str(payload.get("generation") or "default")
+
+
+def _source_status_path(family: str) -> Path:
+    configured = os.environ.get("TRADELATIN_SOURCE_STATUS_DIR", "").strip()
+    root = (
+        Path(configured)
+        if configured
+        else Path(__file__).resolve().parents[4] / "data" / "runtime" / "source_status"
+    )
+    return root / f"{family}.json"
+
+
+def _record_auto_source(
+    *, family: str, generation: str, provider: str, provider_state: str, reason: str | None
+) -> None:
+    destination = _source_status_path(family)
+    try:
+        payload = json.loads(destination.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        payload = {}
+    if payload.get("generation") != generation:
+        payload = {
+            "schema": "tradelatin.processing.source-status.v1",
+            "family": family,
+            "generation": generation,
+            "providers": {},
+        }
+    providers = payload.setdefault("providers", {})
+    providers[provider] = provider_state
+    fallback_reasons = payload.setdefault("fallback_reasons", {})
+    if reason:
+        fallback_reasons[provider] = reason
+    else:
+        fallback_reasons.pop(provider, None)
+    states = set(providers.values())
+    payload["effective_mode"] = "live" if states == {"live"} else "synthetic"
+    payload["fallback_reason"] = (
+        " | ".join(f"{name}:{value}" for name, value in sorted(fallback_reasons.items()))
+        or None
+    )
+    payload["updated_at_epoch"] = time.time()
+    _atomic_json(destination, payload)
 
 
 def _query(params: Mapping[str, Any]) -> str:
@@ -199,16 +357,67 @@ class AcquisitionClient:
         if not isinstance(params, Mapping):
             raise TypeError("request_params_must_be_mapping")
 
+        if self.source_mode == "auto":
+            requested, generation = _source_control()
+            if requested == "synthetic":
+                payload = AcquisitionClient(
+                    self.repo_root, self.family, "emulator", self.timeout_seconds
+                ).fetch(**request_data)
+                _record_auto_source(
+                    family=self.family,
+                    generation=generation,
+                    provider=provider,
+                    provider_state="emulator",
+                    reason=None,
+                )
+                return payload
+            try:
+                payload = AcquisitionClient(
+                    self.repo_root, self.family, "live", self.timeout_seconds
+                ).fetch(**request_data)
+            except (RuntimeError, OSError) as exc:
+                provider_state = (
+                    "missing_key" if "API_KEY is required" in str(exc)
+                    else "invalid_or_unreachable"
+                )
+                payload = AcquisitionClient(
+                    self.repo_root, self.family, "emulator", self.timeout_seconds
+                ).fetch(**request_data)
+                _record_auto_source(
+                    family=self.family,
+                    generation=generation,
+                    provider=provider,
+                    provider_state=provider_state,
+                    reason=type(exc).__name__,
+                )
+                return payload
+            _record_auto_source(
+                family=self.family,
+                generation=generation,
+                provider=provider,
+                provider_state="live",
+                reason=None,
+            )
+            return payload
+
         effective_params = self._effective_params(params)
         url, headers = self._url_and_headers(provider, endpoint_id, path, effective_params)
-        try:
-            with urlopen(Request(url, headers=headers, method="GET"), timeout=float(self.timeout_seconds)) as response:
-                body = response.read()
-        except HTTPError as exc:
-            detail = exc.read(512).decode("utf-8", errors="replace")
-            raise RuntimeError(f"provider_http_error:{provider}:{exc.code}:{detail}") from exc
-        except URLError as exc:
-            raise RuntimeError(f"provider_connection_error:{provider}:{exc.reason}") from exc
+        if self.source_mode == "emulator":
+            body = _fetch_emulator(
+                provider=provider,
+                url=url,
+                headers=headers,
+                timeout_seconds=float(self.timeout_seconds),
+            )
+        else:
+            try:
+                with urlopen(Request(url, headers=headers, method="GET"), timeout=float(self.timeout_seconds)) as response:
+                    body = response.read()
+            except HTTPError as exc:
+                detail = exc.read(512).decode("utf-8", errors="replace")
+                raise RuntimeError(f"provider_http_error:{provider}:{exc.code}:{detail}") from exc
+            except URLError as exc:
+                raise RuntimeError(f"provider_connection_error:{provider}:{exc.reason}") from exc
         try:
             payload = json.loads(body.decode("utf-8"))
         except (UnicodeDecodeError, json.JSONDecodeError) as exc:

@@ -1,6 +1,6 @@
 # TradELATIN VR1 Integration
 
-Build: `V4.2_FINAL_R10_GROK_RADAR_HF3.1`  
+Build: `V4.2_FINAL_R10_GROK_RADAR_HF3.2`
 Contract schema: `V4.2_CONTRACT_SCHEMA_R5`
 
 This repository launches the Emulator, Processing runtime and Screen HMI as a
@@ -30,6 +30,30 @@ From the Integration root:
 
 The root suite discovers Integration, Emulator, Processing and Screen tests.
 
+## Source control and multi-market boundary
+
+For the current BTC runtime, Screen exposes `SYNTHETIC` and `LIVE`. Integration
+starts Processing in automatic acquisition mode:
+
+- `SYNTHETIC` uses the Emulator for all frozen C1–C8 inputs.
+- `LIVE` validates each configured provider independently. A provider with a
+  valid credential is used live; a missing, invalid or unreachable provider
+  falls back to the Emulator for that provider. The HMI reports `LIVE`,
+  `HYBRID`, or `SYNTHETIC FALLBACK` from the effective family results.
+- One valid API key is therefore sufficient for a partial live run; it does not
+  disable the other synthetic sources.
+
+The source change is atomic and requests a refresh of all eight BTC families.
+Provider credentials remain in the root `.env`; Screen never reads them and
+never connects to a provider directly.
+
+The embedded Emulator, Processing and Screen repositories also share a catalog
+of 37 `PROPOSED EQUITIES OBSERVABLE` IDs and the conceptual
+`vr1-observation-v1` projection. This is compatibility scaffolding only:
+Integration does not currently start IBKR, acquire Equities data, publish an
+Equities runtime contract or claim Equities end-to-end support. The existing
+33 logical BTC/CRYPTO endpoints across C1–C8 remain frozen and unchanged.
+
 ## Runtime policy
 
 - Prices publishes every 5 seconds.
@@ -44,6 +68,8 @@ The root suite discovers Integration, Emulator, Processing and Screen tests.
 - CVD Futures `Price ↔ CVD Divergence` uses native Futures OHLC when supplied
   and the canonical BTC Spot price otherwise, so Emulator mode never publishes
   an all-null chart.
+- Contextual-help popovers are portaled outside refreshed chart subtrees, so an
+  open help card remains visually stable while its family contract refreshes.
 
 ## Future C9 / Stacks integration
 

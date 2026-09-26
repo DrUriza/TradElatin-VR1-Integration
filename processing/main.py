@@ -48,7 +48,7 @@ def _parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--poll-seconds", type=float, default=0.25)
     parser.add_argument("--mode", choices=("auto", "bootstrap", "incremental"), default="auto")
-    parser.add_argument("--source", choices=("emulator", "live"), default="emulator")
+    parser.add_argument("--source", choices=("emulator", "live", "auto"), default="emulator")
     parser.add_argument("--data-mode", choices=("synthetic", "live"), default=None)
     parser.add_argument("--reference-timestamp", type=int, default=None, metavar="UNIX_SECONDS")
     parser.add_argument(

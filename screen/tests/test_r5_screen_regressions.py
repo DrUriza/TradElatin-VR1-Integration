@@ -67,7 +67,7 @@ def test_liquidity_hmi_watch_is_fast_but_data_cadence_remains_five_seconds() -> 
 
 def test_screen_exposes_exact_build_health_identity() -> None:
     app = (ROOT / "app.py").read_text(encoding="utf-8")
-    assert 'SCREEN_BUILD_ID = os.getenv("TRADELATIN_SCREEN_BUILD_ID", "V4.2_FINAL_R10_GROK_RADAR_HF3.1")' in app
+    assert 'SCREEN_BUILD_ID = os.getenv("TRADELATIN_SCREEN_BUILD_ID", "V4.2_FINAL_R10_GROK_RADAR_HF3.2")' in app
     assert '@server.route("/__tradelatin__/health", methods=["GET"])' in app
     assert '"build_id": SCREEN_BUILD_ID' in app
 

@@ -415,10 +415,14 @@ def run_main_pipeline(
 ) -> dict[str, Any]:
     """Single Processing orchestration path: Input -> Processing -> Classification -> Screen export."""
     root = Path(repo_root)
-    if source_mode not in {"emulator", "live"}:
+    if source_mode not in {"emulator", "live", "auto"}:
         raise ValueError(f"unsupported_source_mode:{source_mode}")
     if data_mode is None:
-        data_mode = "synthetic" if source_mode == "emulator" else "live"
+        # Automatic acquisition may mix live providers with Emulator fallback.
+        # Existing R5 contracts have no hybrid enum, so keep their conservative
+        # synthetic marker and publish the precise effective mode separately in
+        # the source-status control plane consumed by Screen.
+        data_mode = "live" if source_mode == "live" else "synthetic"
     if data_mode not in {"synthetic", "live"}:
         raise ValueError(f"unsupported_data_mode:{data_mode}")
     is_demo = data_mode == "synthetic"

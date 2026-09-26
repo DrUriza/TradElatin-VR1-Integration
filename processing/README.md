@@ -1,6 +1,51 @@
 # TradELATIN VR1 Processing V4.2
 
-Standalone processing repository.
+Standalone processing repository for TradELATIN VR1 — OBSERVE.
+
+## Implementation status and scope
+
+- Existing C1–C8 Processing is implemented.
+- Public validation is primarily emulator/synthetic/replay based.
+- A live-provider acquisition path exists for the frozen C1–C8 providers.
+- Live operation requires external provider credentials and applicable data access.
+- This does **not** mean C1–C8 are a continuously-live public production service.
+- C9/Stacks is not implemented yet.
+- C9 implementation is proposed grant work and remains outside the current runtime.
+
+The C9 pre-implementation catalog freezes 14 proposed logical source surfaces: 6 C9 Core and 8 transversal. None is implemented in the current runtime.
+
+The current C1–C8 inventory, runtime family names, acquisition routing, endpoint
+allowlists, processing pipelines, contract builders, and sample/runtime contracts
+remain unchanged. Stacks is not part of the current runtime inventory.
+
+Pre-implementation C9/Stacks documentation:
+
+- [C9/Stacks Technical Specification](docs/c9/stacks/C9_STACKS_TECHNICAL_SPEC.md)
+- [C9/Stacks Endpoint Catalog](docs/c9/stacks/C9_STACKS_ENDPOINT_CATALOG.md)
+
+## Proposed Equities extension
+
+SSL Market / IBKR has been evaluated as a functional source for a future
+multi-market Equities extension. The extension is documentation-only and remains
+**PRE-IMPLEMENTATION — PROPOSED / NOT IMPLEMENTED**. There is no IBKR adapter,
+Equities acquisition path, normalizer, processor, contract builder, or operational
+Equities runtime in this repository.
+
+The implemented inventory remains frozen at **33 logical endpoints across C1–C8**
+for BTC/CRYPTO. Proposed Equities observable IDs are maintained separately and
+are not counted among those 33 endpoints. They do not modify C9, which remains an
+independent pre-implementation family.
+
+Pre-implementation Equities documentation:
+
+- [Equities Processing Technical Specification](docs/equities/EQUITIES_PROCESSING_TECHNICAL_SPEC.md)
+- [Proposed Equities Observable Catalog](docs/equities/EQUITIES_OBSERVABLE_CATALOG.md)
+
+Non-runtime structural primitives now exist under `processing_signals.markets`:
+canonical market context/events, adapter boundaries, the isolated proposed
+Equities registry, and a compatibility projection to `vr1-observation-v1` for
+future VR2 consumption. They are not imported by the current BTC pipeline and
+do not constitute operational IBKR or Equities support.
 
 ## Automatic runtime
 
